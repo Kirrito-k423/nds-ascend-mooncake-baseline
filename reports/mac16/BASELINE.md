@@ -12,6 +12,8 @@
 
 ## 完整正式对照
 
+图中的source是持有KV副本的源机器，destination是另一台物理机器。T1请求在source运行并读本机DRAM；T2请求在destination运行，但从source的DRAM加载KV。两台机器各有自己的T0冷请求基线，因此source/destination不是同一请求的两个计时阶段。
+
 每条件三轮、每轮一个请求。分位数采用线性插值，n=3的P95/P99仅描述样本，不能作为稳定尾延迟。TTFT从HTTP请求开始到首个真实token；空文本token由logprobs计数，token间隔来自单token SSE事件。吞吐为输出token数除完整batch时间，不含前后的诊断调用。
 
 | 条件 | n | TTFT均值/P50/P95/P99（ms） | TPOT均值（ms/token） | 输出吞吐（tokens/s） | 相对同节点冷均值 | 异常 |
@@ -51,6 +53,8 @@
 两台历史A5的卡0–3精确矩阵计算与TP4 HCCL通过。每rank20次16KiB all_reduce均值为72.46–73.75µs；门禁没有逐次时延样本，不能据此评价模型延迟或尾部。模型配置与修正镜像两端一致。
 
 初次正式任务在模型启动前被资源门禁拒绝。18:18资源释放后，完成三个内存档位。切换SSD时旧端口检查报Address in use；已改SO_REUSEADDR，并以活跃listener/服务器主动关闭后重启两项CPU测试验证。r3 SSD-only在启动前再次被其他训练占用拦住。
+
+“被其他训练拦住”指npu-smi显示所选四张卡上已有其他训练进程，实验的空闲检查主动退出，没有抢卡或停止对方。预约只约束中台入口，不能阻止其他入口的训练。后续r4失败与共享占用同时出现，但尚不能证明因果。
 
 19:33资源释放后，重新预约并部署r4，source服务进入初始化。19:40:47的日志记录AdxlEngine status507018、HixlSyncTransferContext的AICPU retCode0x2a和TransferEngine ret−1；此时两端又出现外部八卡python进程，source与自有worker共用卡。不能仅凭同时出现就归因为共享负载，也不能把服务启动失败称为SSD读失败。未进入native SSD读回/模型预热或请求；只停止自有source容器，destination受控关闭。84个任务均确认终态/archiveReady（含8个非零退出），短诊断与清理同样已终态；两端自有容器、端口和offload目录消失，自己的预约释放。
 

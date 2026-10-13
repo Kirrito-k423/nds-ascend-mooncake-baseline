@@ -2,6 +2,8 @@
 
 本包面向已有授权的两台物理 A5，完整 Qwen2.5-72B-Instruct、dummy BF16、TP4、PD-colocated。保留基线 1b05f19 的原生 SDK 导入顺序修正。实验分为1024/C1校准与容量约束下的长度/并发扫描，前一轮证据通过后才扩大规模。
 
+source是持有KV副本的源机器；destination是另一台物理机器。T1在source处理请求并读本机DRAM，T2在destination处理请求并从source读远端DRAM；T3/T4同样区分本机/远端SSD。两端各有T0冷请求基线，source/destination不是同一请求的两个阶段。
+
 ## 资源与版本门禁
 
 从同一 simpleHtmlWatch 实例读取 ready 与最新 npu-smi。ready只表示中台可调度，四张卡必须实际空闲，Warning允许通过真实计算/HCCL校验。先预约再立即复查；预约不能阻止其他入口的训练。忙碌时退出，不停止其他进程。两端镜像、模型配置SHA256及设备范围需记录。
