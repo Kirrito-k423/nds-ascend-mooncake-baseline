@@ -11,3 +11,6 @@ archives/
 *.zip
 *.safetensors
 Qwen2.5-72B-Instruct/
+
+# Raw evidence stays local; deliver a reviewed, redacted archive.
+evidence/

@@ -1,5 +1,7 @@
 # A5 vLLM + Mooncake KV Pool baseline
 
+MAC-17 完整 V4-Flash 原生 MXFP4/MXFP8 fake 权重的单机八卡 A5 实测：TP1/DP8/EP8、MTP1，8K/32K/100K/200K/1M 各加32输出通过；32K KV Pool 实际导出/恢复及全字节校验通过。见 [报告](reports/MAC-17-V4-FLASH.md)、[复现手册](reports/MAC-17-REPRODUCE.md) 和 `experiments/mac17/`。使用与下述 MAC-3 相同的固定镜像，容量和功能结论不代表真实权重业务精度。
+
 归档 NDS / MAC-3 已验证的 Qwen2.5-72B-Instruct dummy 权重双机 PD-colocated 实验：vLLM-Ascend 的 Mooncake 原生 SDK 导入修正、回归测试、AISBench 合成负载、缓存副本审计、性能报告与复现脚本。
 
 2026-10-12，两台物理 A5、每机 TP4、实际输入/输出 1024/10 tokens、并发 25、三轮 1200/1200 正式请求成功。目标四卡显示 Warning，但实际计算、通信、数据校验和推理通过。
