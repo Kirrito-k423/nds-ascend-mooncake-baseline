@@ -1,0 +1,127 @@
+{
+  "issue": "MAC-3",
+  "measurement_date": "2026-10-12",
+  "original_image": "sha256:afac49518da833bb9dc52d2faaa72215068da0cc2b52c8ae7f618dd5be6291df",
+  "patched_image": "sha256:64155cd1bb77edf3c927a23c83cdad49e9d5394bd4b90113bc02ce017897c270",
+  "source_baseline": "vLLM-Ascend v0.23.0",
+  "hardware_validation": "313 Store UT passed / 10 skipped; fresh subprocess test 1 passed; 1200/1200 formal two-host requests successful",
+  "full_repository_test_suite_run": false,
+  "publication_changes": "Host addresses and remote project directory externalized as required environment variables; analyzer uses node labels. These script configuration edits have local validation only; original native patch/tests/backend are byte-identical to hardware-tested files.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "b879f5f5aeb72081f4c7e38eb54a14e34ae39219cd71db6612ec5d0e709c7b35"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "628b5012db42035916cf8efe2710dd083956481fcd08c877ab50e14a67bc64a4"
+    },
+    {
+      "path": "Dockerfile.kv-import-fix",
+      "sha256": "7aaff8e7246fdc60cc5da0597a1909e0481b53edf9f2093b4d21231cea8369f1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "07eac4977e10b6cc647429620323bafcf5f96f5f8395a349785af9c1b8d4f138"
+    },
+    {
+      "path": "benchmarks/aisbench_config.template.py",
+      "sha256": "b9afb630450e1a66cda9eba576be0a33267e5d2af991bb2dbd88ebd5b3b0ec45"
+    },
+    {
+      "path": "benchmarks/analyze_cross_node.py",
+      "sha256": "007733d3a94d3949e7e73cda803b98992041f834d4655537bd07a31ae509032f"
+    },
+    {
+      "path": "benchmarks/device_gate.py",
+      "sha256": "f50822b0a0f6cc60908a97ddd94dc59e321d00174d79bc664f6166f68d20858b"
+    },
+    {
+      "path": "benchmarks/make_dataset_cross.py",
+      "sha256": "ec6dade766b7eeb6e8c369aa4d7de0aa28d81be3a69cb0c801805c377ae070b9"
+    },
+    {
+      "path": "benchmarks/remote_store_client.sh",
+      "sha256": "4ba578a2bb8442c4455f1cce221fa226560d2c77ec318c6c967d5dff65a06294"
+    },
+    {
+      "path": "benchmarks/remote_store_probe.py",
+      "sha256": "35c51ce46aad09a7899cf1d4471150dc40209e1afc356bc5dff0fd952ef73c06"
+    },
+    {
+      "path": "benchmarks/remote_store_source.sh",
+      "sha256": "f0531036cce4971bcdcfd7c55aa098451dc438acf6283475986c9fec141f7d7b"
+    },
+    {
+      "path": "benchmarks/replica_audit.py",
+      "sha256": "ed18c06c569940e6853c6debbbe25fb0f458444eabd7819842a51cf33004489c"
+    },
+    {
+      "path": "benchmarks/run_cross_node.py",
+      "sha256": "739d1b0b3bc734050da7a4fc3ac056c6dc3b2a5a70b3737f2ad28c5d04aefb07"
+    },
+    {
+      "path": "benchmarks/store_replica_utils.py",
+      "sha256": "967649dd18ce0338239711318ff579c23caa49fd07910ae09006baa905d5f462"
+    },
+    {
+      "path": "benchmarks/submit_cross_destination.sh",
+      "sha256": "bd4766959a337c99166f7b7190c65ab3b8f781814d990ef21db52688df685a05"
+    },
+    {
+      "path": "benchmarks/submit_cross_source.sh",
+      "sha256": "f33c0951b2a96092000e7f6e4bca1ded03c3d0ce0a43c14a626437d1d2063d55"
+    },
+    {
+      "path": "benchmarks/tp4_gate.py",
+      "sha256": "d7b294267e48e108b304901b516a24941c80b6b909aa7b4255d0b6e1b26a7646"
+    },
+    {
+      "path": "benchmarks/verify_cleanup.py",
+      "sha256": "a85272bd1cf685ce5e54c4acecdbb6956b9d70de039293c31115cd1f7659d212"
+    },
+    {
+      "path": "docs/AI-ENABLEMENT.md",
+      "sha256": "210739a4b20b6bc40e1827520a067431d38e287a784de8f31b2c3f4577d839c7"
+    },
+    {
+      "path": "patches/kv-import-before-device.patch",
+      "sha256": "03e6d0d6c1fac3d06f4c5ab561526d75b673735ce27c9d65b40694a98321b86a"
+    },
+    {
+      "path": "reports/BASELINE.md",
+      "sha256": "1c940295c062645030434a745e2e7ccb3c86d3882b6e8b5363d33ac880b3a16b"
+    },
+    {
+      "path": "reports/validated-cross-node-summary.json",
+      "sha256": "7266d8036c8b9d51f0ec7ef6e1bb927f6d01b618f2058fdd8d37dfb0e8587a82"
+    },
+    {
+      "path": "src_overrides/vllm_ascend/distributed/kv_transfer/kv_pool/ascend_store/backend/mooncake_backend.py",
+      "sha256": "f368ea354f9d9b8e847eb59d6741aec22a6e7005547d3ec0b2651fb5adc24e75"
+    },
+    {
+      "path": "tests/e2e/pull_request/one_card/kv_pool/test_mooncake_backend_import.py",
+      "sha256": "f056a9e5c15dd77e71a87521a40793c1f015865df111d4c6ff6c71e050a0e031"
+    },
+    {
+      "path": "third_party/LICENSE.vllm-ascend",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "validation/import-regression.log",
+      "sha256": "1be69917fe357157bcdeda9b895cdaec613fae00d8ef2c9a5a20a7b6f6828914"
+    },
+    {
+      "path": "validation/store-ut.log",
+      "sha256": "fd100e2a4087d2d1c5144fe526d957324c72d26ffa224e8257965708176d7291"
+    }
+  ],
+  "publication_validation": {
+    "python_ast_parse": "passed",
+    "bash_syntax": "passed",
+    "hardware_tested_backend_and_regression_byte_identical": true,
+    "remote_benchmark_rerun": false,
+    "offline_original_data_analysis": "passed: 1200/1200 requests plus token and replica checks"
+  }
+}

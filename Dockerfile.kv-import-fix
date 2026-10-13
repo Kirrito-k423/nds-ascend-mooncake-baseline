@@ -1,0 +1,2 @@
+FROM nds-vllm-source:mac3-20261012
+COPY src_overrides/vllm_ascend/distributed/kv_transfer/kv_pool/ascend_store/backend/mooncake_backend.py /src/vllm-ascend/vllm_ascend/distributed/kv_transfer/kv_pool/ascend_store/backend/mooncake_backend.py

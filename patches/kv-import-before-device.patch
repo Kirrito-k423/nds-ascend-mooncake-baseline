@@ -1,0 +1,43 @@
+--- a/vllm_ascend/distributed/kv_transfer/kv_pool/ascend_store/backend/mooncake_backend.py
++++ b/vllm_ascend/distributed/kv_transfer/kv_pool/ascend_store/backend/mooncake_backend.py
+@@ -10,7 +10,6 @@
+ import torch
+ 
+ # Third Party
+-from mooncake.store import ReplicateConfig  # type: ignore
+ from vllm.config import ParallelConfig
+ from vllm.distributed.parallel_state import get_world_group
+ from vllm.logger import logger
+@@ -197,6 +196,10 @@
+         self.ensure_initialized()
+         assert self.store is not None
+         try:
++            # Loading the native SDK before set_device can corrupt the heap.
++            # Scheduler clients import this module before device initialization.
++            from mooncake.store import ReplicateConfig  # type: ignore
++
+             config = ReplicateConfig()
+             if self.config.preferred_segment:
+                 config.preferred_segment = self.local_seg
+--- /dev/null
++++ b/tests/e2e/pull_request/one_card/kv_pool/test_mooncake_backend_import.py
+@@ -0,0 +1,19 @@
++"""Regression for native SDK initialization before an NPU context exists."""
++
++import subprocess
++import sys
++
++
++def test_import_backend_before_device_initialization():
++    code = (
++        "from vllm_ascend.distributed.kv_transfer.kv_pool.ascend_store.backend.mooncake_backend "
++        "import MooncakeBackend; print('backend-import-complete')"
++    )
++    result = subprocess.run(
++        [sys.executable, "-c", code],
++        capture_output=True,
++        text=True,
++        timeout=90,
++    )
++    assert result.returncode == 0, result.stderr
++    assert "backend-import-complete" in result.stdout
