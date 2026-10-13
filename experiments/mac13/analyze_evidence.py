@@ -6,18 +6,24 @@ import hashlib
 import json
 import math
 import re
+import zipfile
 from pathlib import Path
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--evidence', type=Path, required=True)
+source = parser.add_mutually_exclusive_group(required=True)
+source.add_argument('--evidence', type=Path)
+source.add_argument('--archive', type=Path, help='Audit a delivery ZIP without extracting it')
 parser.add_argument('--out', type=Path, required=True)
 args = parser.parse_args()
-root, out = args.evidence, args.out
+root = zipfile.Path(args.archive, at='evidence/') if args.archive else args.evidence
+out = args.out
 out.mkdir(parents=True, exist_ok=True)
 checkpoint = root / 'sources/w8a8'
 index = json.loads((checkpoint / 'quant_model_weights.safetensors.index.json').read_text())
+header_dir = checkpoint / 'all-headers'
+header_files = (p for p in header_dir.iterdir() if p.name.endswith('.header.json'))
 headers = {p.name.removesuffix('.header.json'): json.loads(p.read_text())
-           for p in (checkpoint / 'all-headers').glob('*.header.json')}
+           for p in header_files}
 assert set(headers) == set(index['weight_map'].values()), 'Incomplete header capture'
 for name, shard in index['weight_map'].items():
     assert name in headers[shard], f'Index tensor missing: {name}'

@@ -81,6 +81,12 @@ python experiments/mac13/capture_headers.py --revision 155aced390c4692698400b744
 python experiments/mac13/analyze_evidence.py --evidence evidence --out reports/mac13
 ```
 
+下载本 issue 的证据 ZIP 后，也可直接离线复核，无需解压大批 metadata 文件：
+
+```bash
+python experiments/mac13/analyze_evidence.py --archive MAC13-V41-A5-evidence-20261013.zip --out verified
+```
+
 远端先通过已核实中台选择/预约并检查占用，把 config 和探针脚本准备在自己的 `NDS_PROJECT_DIR`。`run_preflight.sh` 的完整命令保留在源码；它使用固定 IPv4 rendezvous 端口 18213，启动前检查端口空闲。若已有八卡 smoke 结果，仅需 `run_startup_only.sh`。32 GiB host memory cap 是此次初始化探针的隔离限额，不是完整模型部署预算。
 
 任务 `mac13-preflight-20261013` 的首次 rendezvous 超时退出 124；中台中断期间用既有严格 SSH 入口前台回收并完成 `mac13-ssh-retry-20261013`，八卡通过、未设置版本变量的启动退出 1。中台以相同 serviceId 恢复后，最终任务 `mac13-startup-final-20261013` 退出 1，原任务和最终任务均确认 `archiveReady=true`。没有重启中台或改其持久记录。
