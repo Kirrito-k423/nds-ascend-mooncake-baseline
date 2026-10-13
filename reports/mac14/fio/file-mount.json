@@ -1,0 +1,10 @@
+{
+   "filesystems": [
+      {
+         "target": "/",
+         "source": "/dev/nvme0n1p4",
+         "fstype": "ext4",
+         "options": "rw,relatime,seclabel,stripe=32"
+      }
+   ]
+}

@@ -13,6 +13,8 @@
 
 ## 代码
 
+MAC-14 新增了文件级 NVMe 顺序/随机读、盘字节核对和原生 Ascend SSD 最小校验。系统共享单盘顺序读约 7.48 GB/s，另外三块 NVMe 未挂载；SSD 清除 DRAM 后三次读回均正确。完整条件、原始脱敏 fio JSON 和未测边界见 [NVMe/SSD 报告](reports/mac14/NVME-SSD-BASELINE.md)，复现步骤见 [磁盘与 SSD 手册](docs/NVME-SSD-REPRODUCE.md)。
+
 - `patches/kv-import-before-device.patch`：将 `ReplicateConfig` 从模块顶层延迟到 Store 初始化后的 `put()` 中导入，同时新增独立进程回归测试。
 - `src_overrides/`：与真实 A5 验证相同的修正后后端源码；保留上游许可证。
 - `tests/e2e/`：独立子进程导入回归，覆盖原生 SDK 提前初始化的 heap abort。
