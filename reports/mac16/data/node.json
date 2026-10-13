@@ -1,0 +1,13 @@
+{
+  "role": "source",
+  "host": "SOURCE_HOST",
+  "source": "SOURCE_HOST",
+  "launches": [
+    {
+      "mode": "memory",
+      "begin_wall_ns": 1791887031270533190,
+      "ready_wall_ns": 1791887275307791940,
+      "exit_after_stop": 0
+    }
+  ]
+}

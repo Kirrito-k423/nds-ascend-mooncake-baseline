@@ -1,0 +1,1277 @@
+[
+  {
+    "start_ns": 9155131525280,
+    "expected_prompt_tokens": 1024,
+    "events": [
+      {
+        "arrival_ns": 9156127046680,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "ching",
+              "logprobs": {
+                "text_offset": [
+                  0
+                ],
+                "token_logprobs": [
+                  -11.931936264038086
+                ],
+                "tokens": [
+                  "ching"
+                ],
+                "top_logprobs": [
+                  {
+                    "ching": -11.931936264038086
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156143470590,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  5
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156161977190,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " attempted",
+              "logprobs": {
+                "text_offset": [
+                  9
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " attempted"
+                ],
+                "top_logprobs": [
+                  {
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156179985700,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "polation",
+              "logprobs": {
+                "text_offset": [
+                  19
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "polation"
+                ],
+                "top_logprobs": [
+                  {
+                    "polation": -11.931928634643555,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156198232230,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " ark",
+              "logprobs": {
+                "text_offset": [
+                  27
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " ark"
+                ],
+                "top_logprobs": [
+                  {
+                    " ark": -11.93193531036377,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156216429420,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " derail",
+              "logprobs": {
+                "text_offset": [
+                  31
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  " derail"
+                ],
+                "top_logprobs": [
+                  {
+                    " derail": -11.931928634643555,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156234771950,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " CONSTANTS",
+              "logprobs": {
+                "text_offset": [
+                  38
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " CONSTANTS"
+                ],
+                "top_logprobs": [
+                  {
+                    " CONSTANTS": -11.93193531036377,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156253020360,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u7b20",
+              "logprobs": {
+                "text_offset": [
+                  48
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "\u7b20"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u7b20": -11.931928634643555,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156271227630,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " C\u00f4",
+              "logprobs": {
+                "text_offset": [
+                  49
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " C\u00f4"
+                ],
+                "top_logprobs": [
+                  {
+                    " C\u00f4": -11.93193531036377,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156289398280,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  52
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156307654960,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "Profile",
+              "logprobs": {
+                "text_offset": [
+                  56
+                ],
+                "token_logprobs": [
+                  -11.931936264038086
+                ],
+                "tokens": [
+                  "Profile"
+                ],
+                "top_logprobs": [
+                  {
+                    "Profile": -11.931936264038086,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156325878060,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " Crossing",
+              "logprobs": {
+                "text_offset": [
+                  63
+                ],
+                "token_logprobs": [
+                  -11.931934356689453
+                ],
+                "tokens": [
+                  " Crossing"
+                ],
+                "top_logprobs": [
+                  {
+                    " Crossing": -11.931934356689453,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156344063880,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "(network",
+              "logprobs": {
+                "text_offset": [
+                  72
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "(network"
+                ],
+                "top_logprobs": [
+                  {
+                    "(network": -11.931937217712402,
+                    "orge": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156362216660,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u6cf3",
+              "logprobs": {
+                "text_offset": [
+                  80
+                ],
+                "token_logprobs": [
+                  -11.931934356689453
+                ],
+                "tokens": [
+                  "\u6cf3"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u6cf3": -11.931934356689453,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156380550260,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "++;\r\n\r\n",
+              "logprobs": {
+                "text_offset": [
+                  81
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "++;\r\n\r\n"
+                ],
+                "top_logprobs": [
+                  {
+                    "++;\r\n\r\n": -11.931937217712402,
+                    "orge": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156398733150,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " znalaz",
+              "logprobs": {
+                "text_offset": [
+                  88
+                ],
+                "token_logprobs": [
+                  -11.931934356689453
+                ],
+                "tokens": [
+                  " znalaz"
+                ],
+                "top_logprobs": [
+                  {
+                    " znalaz": -11.931934356689453,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156416891300,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\ud870\udf64",
+              "logprobs": {
+                "text_offset": [
+                  95
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "\ud870\udf64"
+                ],
+                "top_logprobs": [
+                  {
+                    "\ud870\udf64": -11.931937217712402,
+                    "orge": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156434992380,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  96
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156453231950,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "-control",
+              "logprobs": {
+                "text_offset": [
+                  100
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "-control"
+                ],
+                "top_logprobs": [
+                  {
+                    "-control": -11.931937217712402,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156471460490,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "_uuid",
+              "logprobs": {
+                "text_offset": [
+                  108
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "_uuid"
+                ],
+                "top_logprobs": [
+                  {
+                    "_uuid": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156489704280,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " tackles",
+              "logprobs": {
+                "text_offset": [
+                  113
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  " tackles"
+                ],
+                "top_logprobs": [
+                  {
+                    " tackles": -11.931931495666504,
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156507998660,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "amment",
+              "logprobs": {
+                "text_offset": [
+                  121
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "amment"
+                ],
+                "top_logprobs": [
+                  {
+                    "amment": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156526191880,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " autoload",
+              "logprobs": {
+                "text_offset": [
+                  127
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  " autoload"
+                ],
+                "top_logprobs": [
+                  {
+                    " autoload": -11.931931495666504,
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156544402450,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u8a0a",
+              "logprobs": {
+                "text_offset": [
+                  136
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "\u8a0a"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u8a0a": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156562672020,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u8d1d\u58f3",
+              "logprobs": {
+                "text_offset": [
+                  137
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  "\u8d1d\u58f3"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u8d1d\u58f3": -11.931931495666504,
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156580989160,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " \u015bcian",
+              "logprobs": {
+                "text_offset": [
+                  139
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  " \u015bcian"
+                ],
+                "top_logprobs": [
+                  {
+                    " \u015bcian": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156599025090,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "-control",
+              "logprobs": {
+                "text_offset": [
+                  145
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  "-control"
+                ],
+                "top_logprobs": [
+                  {
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156617259540,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  153
+                ],
+                "token_logprobs": [
+                  -11.93193244934082
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156635457930,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " attempted",
+              "logprobs": {
+                "text_offset": [
+                  157
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " attempted"
+                ],
+                "top_logprobs": [
+                  {
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156653785900,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  167
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156672022840,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " attempted",
+              "logprobs": {
+                "text_offset": [
+                  171
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " attempted"
+                ],
+                "top_logprobs": [
+                  {
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156690512730,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  181
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": "length",
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9156690565310,
+        "event": {
+          "id": "cmpl-94df21ddaf7b9475",
+          "object": "text_completion",
+          "created": 1791887602,
+          "model": "qwen",
+          "choices": [],
+          "usage": {
+            "prompt_tokens": 1024,
+            "total_tokens": 1056,
+            "completion_tokens": 32
+          },
+          "system_fingerprint": "vllm-0.23.0+nds1-tp4-733e79b8"
+        }
+      }
+    ],
+    "success": true,
+    "usage": {
+      "prompt_tokens": 1024,
+      "total_tokens": 1056,
+      "completion_tokens": 32
+    },
+    "done": true,
+    "finish_ns": 9156690622590,
+    "token_arrivals_ns": [
+      9156127046680,
+      9156143470590,
+      9156161977190,
+      9156179985700,
+      9156198232230,
+      9156216429420,
+      9156234771950,
+      9156253020360,
+      9156271227630,
+      9156289398280,
+      9156307654960,
+      9156325878060,
+      9156344063880,
+      9156362216660,
+      9156380550260,
+      9156398733150,
+      9156416891300,
+      9156434992380,
+      9156453231950,
+      9156471460490,
+      9156489704280,
+      9156507998660,
+      9156526191880,
+      9156544402450,
+      9156562672020,
+      9156580989160,
+      9156599025090,
+      9156617259540,
+      9156635457930,
+      9156653785900,
+      9156672022840,
+      9156690512730
+    ],
+    "event_token_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "token_timing_exact": true,
+    "ttft_ms": 995.5214,
+    "tpot_ms": 18.176324193548385,
+    "token_intervals_ms": [
+      16.42391,
+      18.5066,
+      18.00851,
+      18.24653,
+      18.19719,
+      18.34253,
+      18.24841,
+      18.20727,
+      18.17065,
+      18.25668,
+      18.2231,
+      18.18582,
+      18.15278,
+      18.3336,
+      18.18289,
+      18.15815,
+      18.10108,
+      18.23957,
+      18.22854,
+      18.24379,
+      18.29438,
+      18.19322,
+      18.21057,
+      18.26957,
+      18.31714,
+      18.03593,
+      18.23445,
+      18.19839,
+      18.32797,
+      18.23694,
+      18.48989
+    ]
+  }
+]

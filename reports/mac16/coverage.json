@@ -1,0 +1,38 @@
+{
+  "goal_complete": false,
+  "input_tokens": 1024,
+  "output_tokens": 32,
+  "concurrency": 1,
+  "rounds": 3,
+  "native_dram_reads_verified": 12,
+  "model_requests": 17,
+  "formal_requests": 12,
+  "model_successful": 17,
+  "tiers": {
+    "T0": {
+      "status": "validated_calibration",
+      "formal_requests": 6
+    },
+    "T1": {
+      "status": "validated_calibration",
+      "formal_requests": 3
+    },
+    "T2": {
+      "status": "validated_calibration",
+      "formal_requests": 3
+    },
+    "T3": {
+      "status": "not_executed",
+      "formal_requests": 0
+    },
+    "T4": {
+      "status": "not_executed",
+      "formal_requests": 0
+    }
+  },
+  "direct_path_status": "no validated callable path",
+  "host_dram_bytes": null,
+  "network_link_bytes": null,
+  "long_context_scan_status": "not_executed",
+  "primary_blocker": "two physical A5 nodes with an isolated four-card window"
+}

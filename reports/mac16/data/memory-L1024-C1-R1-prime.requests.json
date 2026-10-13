@@ -1,0 +1,1278 @@
+[
+  {
+    "start_ns": 9189431887200,
+    "expected_prompt_tokens": 1024,
+    "events": [
+      {
+        "arrival_ns": 9189485556770,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  0
+                ],
+                "token_logprobs": [
+                  -11.931936264038086
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931936264038086
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189502951550,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " attempted",
+              "logprobs": {
+                "text_offset": [
+                  4
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " attempted"
+                ],
+                "top_logprobs": [
+                  {
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189521049760,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "polation",
+              "logprobs": {
+                "text_offset": [
+                  14
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "polation"
+                ],
+                "top_logprobs": [
+                  {
+                    "polation": -11.931928634643555,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189539309120,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " ark",
+              "logprobs": {
+                "text_offset": [
+                  22
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " ark"
+                ],
+                "top_logprobs": [
+                  {
+                    " ark": -11.93193531036377,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189557487490,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " derail",
+              "logprobs": {
+                "text_offset": [
+                  26
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  " derail"
+                ],
+                "top_logprobs": [
+                  {
+                    " derail": -11.931928634643555,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189575735660,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " CONSTANTS",
+              "logprobs": {
+                "text_offset": [
+                  33
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " CONSTANTS"
+                ],
+                "top_logprobs": [
+                  {
+                    " CONSTANTS": -11.93193531036377,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189593828900,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u7b20",
+              "logprobs": {
+                "text_offset": [
+                  43
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "\u7b20"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u7b20": -11.931928634643555,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189611971530,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " C\u00f4",
+              "logprobs": {
+                "text_offset": [
+                  44
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " C\u00f4"
+                ],
+                "top_logprobs": [
+                  {
+                    " C\u00f4": -11.93193531036377,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189630202820,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  47
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189648810990,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "Profile",
+              "logprobs": {
+                "text_offset": [
+                  51
+                ],
+                "token_logprobs": [
+                  -11.931936264038086
+                ],
+                "tokens": [
+                  "Profile"
+                ],
+                "top_logprobs": [
+                  {
+                    "Profile": -11.931936264038086,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189666580540,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "ching",
+              "logprobs": {
+                "text_offset": [
+                  58
+                ],
+                "token_logprobs": [
+                  -11.931934356689453
+                ],
+                "tokens": [
+                  "ching"
+                ],
+                "top_logprobs": [
+                  {
+                    "ching": -11.931934356689453,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189684917150,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "(network",
+              "logprobs": {
+                "text_offset": [
+                  63
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "(network"
+                ],
+                "top_logprobs": [
+                  {
+                    "(network": -11.931937217712402,
+                    "Profile": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189703009840,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " Crossing",
+              "logprobs": {
+                "text_offset": [
+                  71
+                ],
+                "token_logprobs": [
+                  -11.931934356689453
+                ],
+                "tokens": [
+                  " Crossing"
+                ],
+                "top_logprobs": [
+                  {
+                    " Crossing": -11.931934356689453,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189721219500,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "++;\r\n\r\n",
+              "logprobs": {
+                "text_offset": [
+                  80
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "++;\r\n\r\n"
+                ],
+                "top_logprobs": [
+                  {
+                    "++;\r\n\r\n": -11.931937217712402,
+                    "Profile": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189739380720,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u6cf3",
+              "logprobs": {
+                "text_offset": [
+                  87
+                ],
+                "token_logprobs": [
+                  -11.931934356689453
+                ],
+                "tokens": [
+                  "\u6cf3"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u6cf3": -11.931934356689453,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189757540640,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\ud870\udf64",
+              "logprobs": {
+                "text_offset": [
+                  88
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "\ud870\udf64"
+                ],
+                "top_logprobs": [
+                  {
+                    "\ud870\udf64": -11.931937217712402,
+                    "orge": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189775654580,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " znalaz",
+              "logprobs": {
+                "text_offset": [
+                  89
+                ],
+                "token_logprobs": [
+                  -11.931934356689453
+                ],
+                "tokens": [
+                  " znalaz"
+                ],
+                "top_logprobs": [
+                  {
+                    " znalaz": -11.931934356689453,
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189793892420,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "Profile",
+              "logprobs": {
+                "text_offset": [
+                  96
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "Profile"
+                ],
+                "top_logprobs": [
+                  {
+                    "Profile": -11.931937217712402
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189812067510,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  103
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189830367490,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "-control",
+              "logprobs": {
+                "text_offset": [
+                  107
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "-control"
+                ],
+                "top_logprobs": [
+                  {
+                    "-control": -11.931937217712402,
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189848604510,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "_uuid",
+              "logprobs": {
+                "text_offset": [
+                  115
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "_uuid"
+                ],
+                "top_logprobs": [
+                  {
+                    "_uuid": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189866792140,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " tackles",
+              "logprobs": {
+                "text_offset": [
+                  120
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  " tackles"
+                ],
+                "top_logprobs": [
+                  {
+                    " tackles": -11.931931495666504,
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189884991000,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "amment",
+              "logprobs": {
+                "text_offset": [
+                  128
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "amment"
+                ],
+                "top_logprobs": [
+                  {
+                    "amment": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189903090750,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " autoload",
+              "logprobs": {
+                "text_offset": [
+                  134
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  " autoload"
+                ],
+                "top_logprobs": [
+                  {
+                    " autoload": -11.931931495666504,
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189921231970,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u8a0a",
+              "logprobs": {
+                "text_offset": [
+                  143
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  "\u8a0a"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u8a0a": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189939343340,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "\u8d1d\u58f3",
+              "logprobs": {
+                "text_offset": [
+                  144
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  "\u8d1d\u58f3"
+                ],
+                "top_logprobs": [
+                  {
+                    "\u8d1d\u58f3": -11.931931495666504,
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189957550190,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " \u015bcian",
+              "logprobs": {
+                "text_offset": [
+                  146
+                ],
+                "token_logprobs": [
+                  -11.931937217712402
+                ],
+                "tokens": [
+                  " \u015bcian"
+                ],
+                "top_logprobs": [
+                  {
+                    " \u015bcian": -11.931937217712402,
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189975763540,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "-control",
+              "logprobs": {
+                "text_offset": [
+                  152
+                ],
+                "token_logprobs": [
+                  -11.931931495666504
+                ],
+                "tokens": [
+                  "-control"
+                ],
+                "top_logprobs": [
+                  {
+                    "-control": -11.931931495666504
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9189994036600,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  160
+                ],
+                "token_logprobs": [
+                  -11.93193244934082
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.93193244934082
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9190012272910,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " attempted",
+              "logprobs": {
+                "text_offset": [
+                  164
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " attempted"
+                ],
+                "top_logprobs": [
+                  {
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9190030407440,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": "orge",
+              "logprobs": {
+                "text_offset": [
+                  174
+                ],
+                "token_logprobs": [
+                  -11.931928634643555
+                ],
+                "tokens": [
+                  "orge"
+                ],
+                "top_logprobs": [
+                  {
+                    "orge": -11.931928634643555
+                  }
+                ]
+              },
+              "finish_reason": null,
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9190048986120,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [
+            {
+              "index": 0,
+              "text": " attempted",
+              "logprobs": {
+                "text_offset": [
+                  178
+                ],
+                "token_logprobs": [
+                  -11.93193531036377
+                ],
+                "tokens": [
+                  " attempted"
+                ],
+                "top_logprobs": [
+                  {
+                    " attempted": -11.93193531036377
+                  }
+                ]
+              },
+              "finish_reason": "length",
+              "stop_reason": null,
+              "prompt_token_ids": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "arrival_ns": 9190049036370,
+        "event": {
+          "id": "cmpl-a9c081d9d3a4aad8",
+          "object": "text_completion",
+          "created": 1791887641,
+          "model": "qwen",
+          "choices": [],
+          "usage": {
+            "prompt_tokens": 1024,
+            "total_tokens": 1056,
+            "completion_tokens": 32
+          },
+          "system_fingerprint": "vllm-0.23.0+nds1-tp4-733e79b8"
+        }
+      }
+    ],
+    "success": true,
+    "usage": {
+      "prompt_tokens": 1024,
+      "total_tokens": 1056,
+      "completion_tokens": 32
+    },
+    "done": true,
+    "finish_ns": 9190049082230,
+    "token_arrivals_ns": [
+      9189485556770,
+      9189502951550,
+      9189521049760,
+      9189539309120,
+      9189557487490,
+      9189575735660,
+      9189593828900,
+      9189611971530,
+      9189630202820,
+      9189648810990,
+      9189666580540,
+      9189684917150,
+      9189703009840,
+      9189721219500,
+      9189739380720,
+      9189757540640,
+      9189775654580,
+      9189793892420,
+      9189812067510,
+      9189830367490,
+      9189848604510,
+      9189866792140,
+      9189884991000,
+      9189903090750,
+      9189921231970,
+      9189939343340,
+      9189957550190,
+      9189975763540,
+      9189994036600,
+      9190012272910,
+      9190030407440,
+      9190048986120
+    ],
+    "event_token_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "token_timing_exact": true,
+    "ttft_ms": 53.66957,
+    "tpot_ms": 18.175140322580646,
+    "token_intervals_ms": [
+      17.39478,
+      18.09821,
+      18.25936,
+      18.17837,
+      18.24817,
+      18.09324,
+      18.14263,
+      18.23129,
+      18.60817,
+      17.76955,
+      18.33661,
+      18.09269,
+      18.20966,
+      18.16122,
+      18.15992,
+      18.11394,
+      18.23784,
+      18.17509,
+      18.29998,
+      18.23702,
+      18.18763,
+      18.19886,
+      18.09975,
+      18.14122,
+      18.11137,
+      18.20685,
+      18.21335,
+      18.27306,
+      18.23631,
+      18.13453,
+      18.57868
+    ]
+  }
+]
