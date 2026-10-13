@@ -1,0 +1,38 @@
+{
+  "cold-memory": {
+    "private_archive_member": "native-readback-b021-w1-cold/results/native-memory.json",
+    "original_json_sha256": "57e67612eb60bec6def1786906509ed0269c6a0fc3954f0965da1749a17dd410",
+    "repository_json_sha256": "cad4d86a6041e7b733b428bc9241b673970759c93772a5855862c90d1bc5d3dd",
+    "redaction": "data IP to SOURCE; ports preserved"
+  },
+  "cold-disk": {
+    "private_archive_member": "native-readback-b021-w1-cold/results/native-disk.json",
+    "original_json_sha256": "d2273f9701370733797b9523769c5ed9e210c014f4235458ab2acebc62fc7b6d",
+    "repository_json_sha256": "49b65ee36eff27cf35ac192774c6ccd02ad2620eb041dda3978461f422de49dc",
+    "redaction": "data IP to SOURCE; ports preserved"
+  },
+  "boundary-memory": {
+    "private_archive_member": "native-boundary-b021-w1-model10mfix/results/native-memory.json",
+    "original_json_sha256": "951b645e9c4d3fd6887967052638e8c67799f8d1a929418d6598e26898cdd960",
+    "repository_json_sha256": "95a40c2fc7a2aa0785b980c8f4d5af719fa4499f56856769236c6692b9f4b79f",
+    "redaction": "data IP to SOURCE; ports preserved"
+  },
+  "boundary-disk": {
+    "private_archive_member": "native-boundary-b021-w1-model10mfix/results/native-disk.json",
+    "original_json_sha256": "4d4a185d2c3fd2e1f88c6b9407ee30c46f34971536b769693ea9cebbbe41c82c",
+    "repository_json_sha256": "75ce17e7b0b6ca2b5b68b2b9a7e7b23c3f87710e5dee7a145af5d910534ccd65",
+    "redaction": "data IP to SOURCE; ports preserved"
+  },
+  "warm-disk": {
+    "private_archive_member": "native-readback-b021-w1-hostname/results/native-disk.json",
+    "original_json_sha256": "70e8714a55643d550fa22bf894a690b22a43f1a5e7d1d0cbd476614959bcfe58",
+    "repository_json_sha256": "01f7da38104dda0ddd52ce3d5fa7d6a3512f37f756132cb585273aa34c198c29",
+    "redaction": "data IP to SOURCE; ports preserved"
+  },
+  "k32-disk": {
+    "private_archive_member": "native-readback-b021-w1-k32/results/native-disk.json",
+    "original_json_sha256": "100ec0a968a379c24fd8d5a83e5aee8197f38b6590557ef4ff60cf740f6e1be1",
+    "repository_json_sha256": "100ec0a968a379c24fd8d5a83e5aee8197f38b6590557ef4ff60cf740f6e1be1",
+    "redaction": "data IP to SOURCE; ports preserved"
+  }
+}

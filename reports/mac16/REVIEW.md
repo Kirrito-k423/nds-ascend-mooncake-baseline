@@ -26,3 +26,11 @@
 ## 下次重点关注
 
 先取得能覆盖启动、native SSD校验及三轮模型请求的稳定双机窗口，最小复测HIXL初始化，区分共享负载与SDK/环境问题。重新部署最新指纹，先disk-only续跑，再完成模型worker传输预热和长上下文容量扫描；保留r2结果及r4失败。本报告和goal_process交接将作为后续唤醒上下文。
+
+## W1阶段审视
+
+新增原生SSD物理盘读1/3/10MiB各三轮，10MiB通过推翻参考源码4MiB上限推断；64MiB失败保留。全部51个探索完成读回记录及14份SDK JSON、命令前置错误与abort均归档。模型T3/T4仍0，主阻塞未解除。
+
+本轮可避免的问题：inspect缺换行两次重复、vendor env与nounset不兼容、猜测不存在descriptor API及把TE endpoint误当控制hostname、10MiB shell误带加号。修正后仅用新ID，不把前置脚本错误归为SDK或中台故障。能力检查与真实SDK hostname替代字段假设；CPU测试覆盖控制/数据端口不同、缺rank/错误节点及零贡献client。
+
+OS缓存SSD正确读回而无物理IO说明位置标签不足：只对自有文件fadvise，并与读前位置、RPC、返回值和盘计数共同验收。K1seal及hostnames/位置敏感reference已带回模型helper，MEMORY保留64MiB、SSD默认1/3MiB。15CPU测试通过；模型组合修改仍未NPU验收。下次优先验证四worker/8-key批量与跨节点加载，不重新试64MiB，也不拿native小样本替代T3/T4模型结果。

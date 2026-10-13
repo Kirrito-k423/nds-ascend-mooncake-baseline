@@ -1,0 +1,17 @@
+{
+  "mode": "disk",
+  "sizes": [
+    1048576,
+    67108864
+  ],
+  "rounds": 3,
+  "records": [],
+  "reference": "numpy PCG64 seed 42+size, uint8 positional random values",
+  "model_requests": 0,
+  "direct_dma_tested": false,
+  "start_wall_ns": 1791895533588526400,
+  "setup_return": 0,
+  "remove_all_return": 0,
+  "error": "Traceback (most recent call last):\n  File \"/task/sdk_tier_probe.py\", line 108, in <module>\n    proof=only_disk(key) if mode=='disk' else {'after':audit(key)}\n          ^^^^^^^^^^^^^^\n  File \"/task/sdk_tier_probe.py\", line 69, in only_disk\n    else:raise TimeoutError('No COMPLETE LOCAL_DISK in 120s')\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: No COMPLETE LOCAL_DISK in 120s\n",
+  "finish_wall_ns": 1791895667757922740
+}

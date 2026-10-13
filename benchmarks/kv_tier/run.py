@@ -14,6 +14,7 @@ import traceback
 
 from node import Node, http, serve
 from stream import request
+from segments import contributing_segments
 
 ROLE = sys.argv[1]
 NODE = Node(ROLE)
@@ -42,6 +43,11 @@ def call(role, path, body=None, timeout=1800):
 
 
 def agent(path, body): return call('source','/agent',{'path':path,'body':body})
+
+def disk_only(keys):
+    text=call('source','/log',{'offset':0})['text']
+    names=contributing_segments(text,NODE.source)
+    return agent('/disk-only',{'keys':keys,'segments':names})
 
 
 def traces(text):
@@ -139,13 +145,16 @@ def wait_disk(keys):
 
 
 def micro(mode):
-    for size in [1024**2,64*1024**2]:
+    # The installed SSD reader aborts for 64MiB objects. W1 independently
+    # validated 1/3MiB; MEMORY retains its original larger-object control.
+    sizes=[1024**2,3*1024**2] if mode=='disk' else [1024**2,64*1024**2]
+    for size in sizes:
         manifest = agent('/probe-put',{'size':size})
         key = manifest['key']
         if mode == 'disk': wait_disk([key])
         for round_number in range(3):
             for role in (['source','destination'] if round_number%2==0 else ['destination','source']):
-                proof = (agent('/disk-only',{'keys':[key]})['after'] if mode == 'disk'
+                proof = (disk_only([key])['after'] if mode == 'disk'
                          else memory_audit([key]))
                 before = {r:call(r,'/snapshot') for r in ['source','destination']}
                 result = call(role,'/agent',{'path':'/probe-read','body':{'key':key,'size':size}})
@@ -229,7 +238,7 @@ def owner():
                         if mode == 'memory': proof=memory_audit(keys)
                         else:
                             wait_disk(keys)
-                            clearing=agent('/disk-only',{'keys':keys})
+                            clearing=disk_only(keys)
                             (OUT/(label+'-'+tier+'.clearing.json')).write_text(json.dumps(clearing,indent=2))
                             proof=clearing['after']
                         batch(role,tokens,label+'-'+tier,tier,rn,proof)

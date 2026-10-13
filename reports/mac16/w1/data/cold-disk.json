@@ -1,0 +1,407 @@
+{
+  "mode": "disk",
+  "sizes": [
+    1048576,
+    3145728
+  ],
+  "rounds": 3,
+  "records": [
+    {
+      "size_bytes": 1048576,
+      "round": 0,
+      "replicas": {
+        "before": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": true,
+            "local_disk": false,
+            "memory_descriptor": {
+              "buffer_descriptor": {
+                "buffer_address": 17592269930496,
+                "size": 1048576,
+                "transport_endpoint": "SOURCE:16475"
+              }
+            }
+          },
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "lease_wait_s": 6,
+        "cleared": {
+          "SOURCE:12511": [
+            "mac16-sdk-disk-1048576"
+          ]
+        },
+        "own_files_fsync_fadvise": [
+          "7339616206849.bucket"
+        ],
+        "global_page_cache_modified": false
+      },
+      "returned_bytes": 1048576,
+      "elapsed_ms": 2.3172,
+      "sha256": "2bcbc9d8d847d5e4355ba74c3a42c9213bbd2a1ab49b11c48d7b7288e6ee212a",
+      "expected_sha256": "2bcbc9d8d847d5e4355ba74c3a42c9213bbd2a1ab49b11c48d7b7288e6ee212a",
+      "exact": true,
+      "offload_rpc_delta": 1,
+      "disk_before": {
+        "nvme0n1": 54564826112,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54565878784,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 1052672,
+      "physical_disk_read_witness": true
+    },
+    {
+      "size_bytes": 1048576,
+      "round": 1,
+      "replicas": {
+        "before": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "lease_wait_s": 6,
+        "cleared": {},
+        "own_files_fsync_fadvise": [
+          "7339616206849.bucket"
+        ],
+        "global_page_cache_modified": false
+      },
+      "returned_bytes": 1048576,
+      "elapsed_ms": 1.24712,
+      "sha256": "2bcbc9d8d847d5e4355ba74c3a42c9213bbd2a1ab49b11c48d7b7288e6ee212a",
+      "expected_sha256": "2bcbc9d8d847d5e4355ba74c3a42c9213bbd2a1ab49b11c48d7b7288e6ee212a",
+      "exact": true,
+      "offload_rpc_delta": 1,
+      "disk_before": {
+        "nvme0n1": 54565878784,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54566931456,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 1052672,
+      "physical_disk_read_witness": true
+    },
+    {
+      "size_bytes": 1048576,
+      "round": 2,
+      "replicas": {
+        "before": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "lease_wait_s": 6,
+        "cleared": {},
+        "own_files_fsync_fadvise": [
+          "7339616206849.bucket"
+        ],
+        "global_page_cache_modified": false
+      },
+      "returned_bytes": 1048576,
+      "elapsed_ms": 1.20158,
+      "sha256": "2bcbc9d8d847d5e4355ba74c3a42c9213bbd2a1ab49b11c48d7b7288e6ee212a",
+      "expected_sha256": "2bcbc9d8d847d5e4355ba74c3a42c9213bbd2a1ab49b11c48d7b7288e6ee212a",
+      "exact": true,
+      "offload_rpc_delta": 1,
+      "disk_before": {
+        "nvme0n1": 54566931456,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54567984128,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 1052672,
+      "physical_disk_read_witness": true
+    },
+    {
+      "size_bytes": 3145728,
+      "round": 0,
+      "replicas": {
+        "before": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": true,
+            "local_disk": false,
+            "memory_descriptor": {
+              "buffer_descriptor": {
+                "buffer_address": 17592269930496,
+                "size": 3145728,
+                "transport_endpoint": "SOURCE:16475"
+              }
+            }
+          },
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "lease_wait_s": 6,
+        "cleared": {
+          "SOURCE:12511": [
+            "mac16-sdk-disk-3145728"
+          ]
+        },
+        "own_files_fsync_fadvise": [
+          "7339616206850.bucket",
+          "7339616206849.bucket"
+        ],
+        "global_page_cache_modified": false
+      },
+      "returned_bytes": 3145728,
+      "elapsed_ms": 2.24087,
+      "sha256": "a716a5dce545cec4afdd3992106c503e38cc0c2263bdaa4a9934823f5a20e593",
+      "expected_sha256": "a716a5dce545cec4afdd3992106c503e38cc0c2263bdaa4a9934823f5a20e593",
+      "exact": true,
+      "offload_rpc_delta": 1,
+      "disk_before": {
+        "nvme0n1": 54567984128,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54571133952,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 3149824,
+      "physical_disk_read_witness": true
+    },
+    {
+      "size_bytes": 3145728,
+      "round": 1,
+      "replicas": {
+        "before": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "lease_wait_s": 6,
+        "cleared": {},
+        "own_files_fsync_fadvise": [
+          "7339616206850.bucket",
+          "7339616206849.bucket"
+        ],
+        "global_page_cache_modified": false
+      },
+      "returned_bytes": 3145728,
+      "elapsed_ms": 2.16935,
+      "sha256": "a716a5dce545cec4afdd3992106c503e38cc0c2263bdaa4a9934823f5a20e593",
+      "expected_sha256": "a716a5dce545cec4afdd3992106c503e38cc0c2263bdaa4a9934823f5a20e593",
+      "exact": true,
+      "offload_rpc_delta": 1,
+      "disk_before": {
+        "nvme0n1": 54571133952,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54574283776,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 3149824,
+      "physical_disk_read_witness": true
+    },
+    {
+      "size_bytes": 3145728,
+      "round": 2,
+      "replicas": {
+        "before": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": false,
+            "local_disk": true,
+            "descriptor_methods": [
+              "get_disk_descriptor",
+              "get_memory_descriptor"
+            ],
+            "local_disk_descriptor_not_exposed": true
+          }
+        ],
+        "lease_wait_s": 6,
+        "cleared": {},
+        "own_files_fsync_fadvise": [
+          "7339616206850.bucket",
+          "7339616206849.bucket"
+        ],
+        "global_page_cache_modified": false
+      },
+      "returned_bytes": 3145728,
+      "elapsed_ms": 2.10414,
+      "sha256": "a716a5dce545cec4afdd3992106c503e38cc0c2263bdaa4a9934823f5a20e593",
+      "expected_sha256": "a716a5dce545cec4afdd3992106c503e38cc0c2263bdaa4a9934823f5a20e593",
+      "exact": true,
+      "offload_rpc_delta": 1,
+      "disk_before": {
+        "nvme0n1": 54574283776,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54577433600,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 3149824,
+      "physical_disk_read_witness": true
+    }
+  ],
+  "reference": "numpy PCG64 seed 42+size, uint8 positional random values",
+  "model_requests": 0,
+  "direct_dma_tested": false,
+  "start_wall_ns": 1791898484610694620,
+  "setup_return": 0,
+  "remove_all_return": 0,
+  "last_disk_clear": {
+    "replicas": [
+      {
+        "status": "ReplicaStatus.COMPLETE",
+        "memory": false,
+        "local_disk": true,
+        "descriptor_methods": [
+          "get_disk_descriptor",
+          "get_memory_descriptor"
+        ],
+        "local_disk_descriptor_not_exposed": true
+      }
+    ],
+    "segments": [],
+    "client_hostname": "SOURCE:12511",
+    "descriptor_transport_endpoints": [],
+    "name_source": "single contributing store.get_hostname"
+  },
+  "functional_pass": true,
+  "finish_wall_ns": 1791898537873936050
+}

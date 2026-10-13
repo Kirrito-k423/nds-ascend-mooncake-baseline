@@ -6,6 +6,14 @@ source = Path(sys.argv[1]).read_text()
 assert 'from mooncake.store import ReplicateConfig' in source
 assert source.index('from mooncake.store import ReplicateConfig') > source.index('def put(')
 source = source.replace('import threading\n', 'import threading\nimport time\n')
+start = '        return store'
+replacement = '''        logger.info("NDS_TRACE %s", json.dumps({"op": "store_ready",
+                    "segment_name": store.get_hostname(), "transport_endpoint": self.local_seg,
+                    "contributes": self._contribute_memory,
+                    "pool_bytes": self.config.global_segment_size if self._contribute_memory else 0}))
+        return store'''
+assert source.count(start) == 1
+source = source.replace(start,replacement)
 start = '            res = self.store.batch_get_into_multi_buffers(keys, addrs, sizes)'
 replacement = '''            nds_begin = time.perf_counter_ns()
             nds_rpc_before = self.store.get_offload_rpc_read_count()

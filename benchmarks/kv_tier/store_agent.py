@@ -9,6 +9,7 @@ import time
 import traceback
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+import numpy as np
 import torch
 import torch_npu
 
@@ -69,12 +70,16 @@ def complete(status):
     return status.rsplit('.',1)[-1] == 'COMPLETE'
 
 
-def disk_only(keys):
+def disk_only(keys,known_segments=None):
     before = audit(keys)
     assert keys and all(rows and any(r['local_disk'] and complete(r['status']) for r in rows)
                         for rows in before.values()), 'Missing COMPLETE LOCAL_DISK'
     segments = segment_names([r['memory_descriptor'] for rows in before.values()
                               for r in rows if r['memory']])
+    if known_segments is not None:
+        assert known_segments and all(isinstance(s,str) and s.startswith(os.environ['NDS_LOCAL_HOST']+':')
+                                      for s in known_segments),'Require task-owned source control hostnames'
+        segments.update(known_segments)
     if any(r['memory'] for rows in before.values() for r in rows):
         assert segments, 'Memory descriptor has no segment_name; refuse unknown clearing'
     # No replica query may occur between this wait and clearing.
@@ -83,8 +88,22 @@ def disk_only(keys):
     after = audit(keys)
     assert all(rows and all(not r['memory'] and r['local_disk'] and complete(r['status']) for r in rows)
                for rows in after.values()), 'A COMPLETE LOCAL_DISK-only replica is required'
+    evicted=[]
+    if os.environ.get('NDS_OWN_FILE_COLD')=='1':
+        # /offload is the empty task-owned bind mount created by Node.start.
+        # Never clear the host-wide page cache or touch another task's files.
+        # Model workers write to independent subdirectories under this mount.
+        for p in Path('/offload').rglob('*.bucket'):
+            fd=os.open(p,os.O_RDWR|os.O_NOFOLLOW)
+            try:
+                os.fsync(fd)
+                os.posix_fadvise(fd,0,0,os.POSIX_FADV_DONTNEED)
+            finally:os.close(fd)
+            evicted.append(str(p.relative_to('/offload')))
+        assert evicted,'No owned bucket found for cold-file preparation'
     return {'before': before, 'lease_wait_s': 6, 'segments': sorted(segments),
-            'clear_results': cleared, 'after': after}
+            'clear_results': cleared, 'after': after,
+            'own_files_fsync_fadvise':evicted,'global_page_cache_modified':False}
 
 
 def aligned(size):
@@ -94,8 +113,9 @@ def aligned(size):
 
 
 def reference(size):
-    # Different byte values in every 256-byte period; full SHA plus exact check.
-    return torch.arange(256, dtype=torch.uint8).repeat((size+255)//256)[:size]
+    # Position-sensitive data also detects whole 256-byte block reordering.
+    values=np.random.default_rng(42+size).integers(0,256,size=size,dtype=np.uint8)
+    return torch.from_numpy(values)
 
 
 def probe_put(size):
@@ -135,7 +155,7 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
             path = self.path
             if path == '/audit': result = audit(body['keys'])
-            elif path == '/disk-only': result = disk_only(body['keys'])
+            elif path == '/disk-only': result = disk_only(body['keys'],body.get('segments'))
             elif path == '/remove-all':
                 # Isolated task-owned master only. Never use against a shared pool.
                 time.sleep(6)

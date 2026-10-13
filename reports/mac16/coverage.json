@@ -34,5 +34,15 @@
   "host_dram_bytes": null,
   "network_link_bytes": null,
   "long_context_scan_status": "not_executed",
-  "primary_blocker": "two physical A5 nodes with an isolated four-card window"
+  "primary_blocker": "two physical A5 nodes with matching model assets, simultaneous reservations and sustained four-card availability",
+  "native_ssd_physical_reads_verified_w1": 9,
+  "native_ssd_sizes_verified_w1": [
+    1048576,
+    3145728,
+    10485760
+  ],
+  "native_exploratory_completed_reads_w1": 51,
+  "native_ssd_64MiB_status": "AllocateBatch assertion; no completed SSD sample",
+  "native_model_object_10MiB_status": "single-object three rounds passed; multi-key/multi-worker/cross-node unvalidated",
+  "cpu_tests_passed": 15
 }

@@ -33,7 +33,7 @@ PY
 
 ## 校准与扫描
 
-默认仅1024输入、32输出、C1、三轮。native先做1/64MiB本机及跨节点数据读回，完整SHA256和逐字节校验。随后memory模式测T0/T1/T2；disk模式单独重启并测T0/T3/T4。最终需要分别分析两个模式的冷对照，不能用历史1024/10的AISBench绝对值代替本轮32输出结果。本包的固定token ID数据与历史AISBench chat不同；均记录真实usage。
+默认仅1024输入、32输出、C1、三轮。MEMORY native做1/64MiB本机及跨节点读回；SSD micro改为已验证的1/3MiB，使用位置敏感数据、完整SHA256和逐字节校验。64MiB SSD在本镜像AllocateBatch中abort，禁止重复。W1单卡10MiB业务key已三轮通过，但未验证8-key/four-worker batch，模型T3/T4仍缺实测。随后memory模式测T0/T1/T2；disk模式单独重启并测T0/T3/T4。最终需要分别分析两个模式的冷对照，不能用历史1024/10的AISBench绝对值代替本轮32输出结果。本包的固定token ID数据与历史AISBench chat不同；均记录真实usage。
 
 校准完成后，复核 `five-tier.json`、每阶段 `.requests.json/.evidence.json/.log`、`offload-cleanup.json` 与两端退出记录，再设置例如：
 
@@ -53,7 +53,7 @@ r4在source初始化阶段出现HIXL/AICPU错误，未完成SSD native校验或�
 
 ## SSD与计数边界
 
-source各rank独立offload目录，64GiB显式配额、1GiBstaging buffer、256MiB bucket、32 keys/bucket、heartbeat1秒、uring关闭；当前四个目录仍落在同一系统NVMe，不能当成四盘条带。以MAC-14方法等待完成LOCAL_DISK、停止查询6秒，逐segment清除DRAM并重新审计，才发起读请求。每轮重构，排除读后DRAM回填。配置依据为[Mooncake同版本SSD文档](https://github.com/kvcache-ai/Mooncake/blob/v0.3.11.post1/docs/source/deployment/ssd-offload.md)，SDK和运行证据优先。
+source各rank独立offload目录，64GiB显式配额、1GiBstaging buffer、256MiB bucket、默认1 key/bucket（小样本seal校准；可用NDS_OFFLOAD_BUCKET_KEYS_LIMIT显式覆盖并记录）、heartbeat1秒、uring关闭；当前四个目录仍落在同一系统NVMe，不能当成四盘条带。以MAC-14方法等待完成LOCAL_DISK、停止查询6秒，逐segment清除DRAM并重新审计，才发起读请求。 新版记录贡献worker的store.get_hostname控制地址；MEMORY descriptor仅有TE transport_endpoint时，不能当作segment_name。必须凑齐四个贡献worker、排除scheduler零贡献client，不全局猜测。NDS_OWN_FILE_COLD默认1，仅fsync/fadvise本任务/own offload下的bucket文件，不清全局page cache；随后仍要求真实盘计数和native加载字节门禁。每轮重构，排除读后DRAM回填。配置依据为[Mooncake同版本SSD文档](https://github.com/kvcache-ai/Mooncake/blob/v0.3.11.post1/docs/source/deployment/ssd-offload.md)，SDK和运行证据优先。
 
 保留native get各rank开始/结束、正返回字节与offload RPC计数；这是SDK主机调用时长，不能直接等同独立的盘读、H2D或同步时长。跨节点单调时钟不能相减。源码阶段可能重叠，不能相加冒充关键路径。
 
@@ -66,3 +66,9 @@ source各rank独立offload目录，64GiB显式配额、1GiBstaging buffer、256M
 脚本只删除本进程确认过的空目录内生成的offload数据。确认自己的容器不存在、端口关闭、任务真实退出且archiveReady，再释放自己的预约。保留模型配置、镜像与日志。中台不可达不重启服务、不换实例、不按进程名杀守护进程；用原任务ID查询，未知状态不重新提交。
 
 没有SSD→HBM direct的可调用证据时，不运行所谓direct对照。O_DIRECT/io_uring只是存储IO策略；SDK注册NPU buffer或跨节点HIXL不能单独证明SSD直接DMA到HBM。dummy只用于资源/路径/性能，不用于业务精度。
+
+## W1已证与恢复门禁
+
+见`reports/mac16/w1/NATIVE-SSD.md`及data。单卡MEMORY/SSD的1/3/10MiB各三轮正确；SSD读前COMPLETE LOCAL_DISK-only、lease6s，冷文件三轮每次实际盘读payload+4096B。OS缓存保留的1MiB读回虽正确、RPC+1，但盘读0，不计为物理SSD性能。64MiB失败保留；上游参考源码不能当部署库实际大小上限，10MiB通过已推翻4MiB推断。
+
+下一步只在有相同模型资产及可同时预约的双节点窗口时，先验证10MiB×8key、四worker和跨机native加载，再做1024/C1模型SSD三轮。当前所有proxy SSH端口共用预约入口，第二预约409时不能用短执行/旁路SSH替代预约跑模型。Node.start及worker预热、hostname映射/fadvise组合修改尚未四worker设备实测。重新计算并部署最新全部*.py指纹，旧65d89b6不可重用。W1累计121task和20短诊断已终态，自有容器/端口/offload及预约已清。

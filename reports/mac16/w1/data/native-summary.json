@@ -1,0 +1,183 @@
+{
+  "groups": [
+    {
+      "run": "cold-memory",
+      "size_bytes": 1048576,
+      "n": 3,
+      "samples_ms": [
+        0.3051,
+        0.21397,
+        0.20732
+      ],
+      "mean_ms": 0.24212999999999998,
+      "median_ms": 0.21397,
+      "min_ms": 0.20732,
+      "max_ms": 0.3051,
+      "change_from_matched_memory_pct": 0.0,
+      "disk_read_bytes_each": [
+        0,
+        0,
+        0
+      ],
+      "rpc_reads_each": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "run": "cold-memory",
+      "size_bytes": 3145728,
+      "n": 3,
+      "samples_ms": [
+        0.19405,
+        0.19279,
+        0.19696
+      ],
+      "mean_ms": 0.1946,
+      "median_ms": 0.19405,
+      "min_ms": 0.19279,
+      "max_ms": 0.19696,
+      "change_from_matched_memory_pct": 0.0,
+      "disk_read_bytes_each": [
+        0,
+        0,
+        0
+      ],
+      "rpc_reads_each": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "run": "cold-disk",
+      "size_bytes": 1048576,
+      "n": 3,
+      "samples_ms": [
+        2.3172,
+        1.24712,
+        1.20158
+      ],
+      "mean_ms": 1.5886333333333333,
+      "median_ms": 1.24712,
+      "min_ms": 1.20158,
+      "max_ms": 2.3172,
+      "change_from_matched_memory_pct": 556.1076006002286,
+      "disk_read_bytes_each": [
+        1052672,
+        1052672,
+        1052672
+      ],
+      "rpc_reads_each": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "run": "cold-disk",
+      "size_bytes": 3145728,
+      "n": 3,
+      "samples_ms": [
+        2.24087,
+        2.16935,
+        2.10414
+      ],
+      "mean_ms": 2.1714533333333335,
+      "median_ms": 2.16935,
+      "min_ms": 2.10414,
+      "max_ms": 2.24087,
+      "change_from_matched_memory_pct": 1015.8547447756082,
+      "disk_read_bytes_each": [
+        3149824,
+        3149824,
+        3149824
+      ],
+      "rpc_reads_each": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "run": "boundary-memory",
+      "size_bytes": 10485760,
+      "n": 3,
+      "samples_ms": [
+        0.39549,
+        0.34226,
+        0.32418
+      ],
+      "mean_ms": 0.35397666666666666,
+      "median_ms": 0.34226,
+      "min_ms": 0.32418,
+      "max_ms": 0.39549,
+      "change_from_matched_memory_pct": 0.0,
+      "disk_read_bytes_each": [
+        0,
+        0,
+        0
+      ],
+      "rpc_reads_each": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "run": "boundary-disk",
+      "size_bytes": 10485760,
+      "n": 3,
+      "samples_ms": [
+        5.10677,
+        3.73558,
+        3.74592
+      ],
+      "mean_ms": 4.19609,
+      "median_ms": 3.74592,
+      "min_ms": 3.73558,
+      "max_ms": 5.10677,
+      "change_from_matched_memory_pct": 1085.414292844161,
+      "disk_read_bytes_each": [
+        10489856,
+        10489856,
+        10489856
+      ],
+      "rpc_reads_each": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "run": "warm-disk",
+      "size_bytes": 1048576,
+      "n": 3,
+      "samples_ms": [
+        1.59082,
+        0.79166,
+        0.63286
+      ],
+      "mean_ms": 1.0051133333333333,
+      "median_ms": 0.79166,
+      "min_ms": 0.63286,
+      "max_ms": 1.59082,
+      "change_from_matched_memory_pct": null,
+      "disk_read_bytes_each": [
+        0,
+        0,
+        0
+      ],
+      "rpc_reads_each": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "total_completed_reads": 21,
+  "accepted_physical_ssd_reads": 9,
+  "model_requests": 0,
+  "failed_64MiB_read_included_as_performance_sample": false
+}
