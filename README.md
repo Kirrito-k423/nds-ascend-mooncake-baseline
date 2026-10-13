@@ -37,4 +37,6 @@ docker build -f Dockerfile.kv-import-fix -t nds-vllm-source:kv-import-fix-202610
 
 原修正已完成真实 A5 Store 单测 **313 passed / 10 skipped**、新增回归 **1 passed** 及双机负载验证。完整上游仓库测试未运行，补丁未上游合入。为版本归档，实验脚本的机器地址、节点名称和远端目录已参数化；本次只对这些配置调整执行本地语法及离线分析验证，没有重新宣称 NPU 实测。
 
+MAC-13 的 [V4.1 W8A8 部署边界报告](reports/mac13/REPORT.md) 单独归档模型身份、完整 tensor header 核查、八卡 Warning 计算/HCCL 校验和实际启动失败。当前基线栈不识别 V4.1，尚无目标长上下文/KV/并发结果；相关脚本位于 `experiments/mac13/`，不会改变上述 Qwen baseline。
+
 保留上游文件的原始版权声明；vLLM-Ascend 的许可证位于 `third_party/LICENSE.vllm-ascend`。仓库上传不代表向上游提交 PR 或完成上游验收。

@@ -1,0 +1,9 @@
+rank,health,physical_hbm_gib,before_used_mib,before_free_gib,after_used_mib,smoke_runtime_total_gib,smoke_runtime_free_gib,smoke_peak_allocated_bytes,target_weight_bytes,target_activation_peak_bytes,target_runtime_graph_workspace_bytes,target_kv_capacity_bytes,target_kv_token_capacity
+0,Warning,96.0,4773,91.3388671875,4773,91.75,90.5484733581543,20996608,,,,,
+1,Warning,96.0,4765,91.3466796875,4765,91.75,90.55691528320312,20996608,,,,,
+2,Warning,96.0,4767,91.3447265625,4767,91.75,90.55475997924805,20996608,,,,,
+3,Warning,96.0,4766,91.345703125,4766,91.75,90.55657577514648,20996608,,,,,
+4,Warning,96.0,4774,91.337890625,4774,91.75,90.54729843139648,20996608,,,,,
+5,Warning,96.0,4764,91.34765625,4764,91.75,90.55628967285156,20996608,,,,,
+6,Warning,96.0,4763,91.3486328125,4763,91.75,90.55742645263672,20996608,,,,,
+7,Warning,96.0,4766,91.345703125,4766,91.75,90.55613327026367,20996608,,,,,

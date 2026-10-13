@@ -1,0 +1,318 @@
+{
+  "issue": "MAC-13",
+  "machine_id": "a5-b07-6",
+  "official_model_revision": "5254448103b6254fc646dacbca1cbbf20e9216c1",
+  "w8a8_revision": "155aced390c4692698400b744546a8bc396699c6",
+  "image_id": "sha256:64155cd1bb77edf3c927a23c83cdad49e9d5394bd4b90113bc02ce017897c270",
+  "versions": {
+    "torch": "2.10.0",
+    "torch-npu": "2.10.0.post4",
+    "vllm": "0.23.0+nds1.empty",
+    "vllm-ascend": "0.23.0+nds1",
+    "transformers": "5.5.4",
+    "tokenizers": "0.22.2"
+  },
+  "python_runtime": {
+    "python": "3.12.13",
+    "vllm_effective_version_env": "0.23.0",
+    "cann_latest_target": "/usr/local/Ascend/cann-9.1.0"
+  },
+  "smoke_passed_ranks": 8,
+  "startup": {
+    "probe_kind": "architecture_startup_with_original_w8a8_config",
+    "settings": {
+      "model": "/model",
+      "load_format": "dummy",
+      "skip_tokenizer_init": true,
+      "dtype": "bfloat16",
+      "tensor_parallel_size": 8,
+      "data_parallel_size": 1,
+      "enable_expert_parallel": true,
+      "max_model_len": 8192,
+      "max_num_seqs": 1,
+      "max_num_batched_tokens": 8192,
+      "gpu_memory_utilization": 0.9,
+      "kv_cache_dtype": "auto",
+      "quantization": "ascend",
+      "enforce_eager": true,
+      "cpu_offload_gb": 0,
+      "enable_prefix_caching": false
+    },
+    "w8a8_metadata_available_locally": true,
+    "remote_metadata_scope": "unmodified config only; no tensors allocated",
+    "weight_capacity_measured": false,
+    "requests_attempted": 0,
+    "transformers_config_recognized": false,
+    "config_exception_type": "ValueError",
+    "config_exception_message": "The checkpoint you are trying to load has model type `deepseek_v41` but Transformers does not recognize this architecture. This could be because of an issue with the checkpoint, or because your version of Transformers is out of date.\n\nYou can update Transformers with the command `pip install --upgrade transformers`. If this does not work, and the checkpoint is very new, then there may not be a release version that supports this model yet. In this case, you can get the most up-to-date code by installing Transformers from source with the command `pip install git+https://github.com/huggingface/transformers.git`",
+    "target_architecture_registered": false,
+    "supported_deepseek_architectures": [
+      "DeepSeekMTPModel",
+      "DeepSeekV4MTPModel",
+      "DeepseekForCausalLM",
+      "DeepseekOCR2ForCausalLM",
+      "DeepseekOCRForCausalLM",
+      "DeepseekV2ForCausalLM",
+      "DeepseekV32ForCausalLM",
+      "DeepseekV3ForCausalLM",
+      "DeepseekV4ForCausalLM",
+      "DeepseekVLV2ForCausalLM",
+      "Eagle3DeepseekV2ForCausalLM",
+      "Eagle3DeepseekV3ForCausalLM",
+      "EagleDeepSeekMTPModel"
+    ],
+    "engine_started": false,
+    "exception_type": "ValidationError",
+    "exception_message": "1 validation error for ModelConfig\n  Value error, The checkpoint you are trying to load has model type `deepseek_v41` but Transformers does not recognize this architecture. This could be because of an issue with the checkpoint, or because your version of Transformers is out of date.\n\nYou can update Transformers with the command `pip install --upgrade transformers`. If this does not work, and the checkpoint is very new, then there may not be a release version that supports this model yet. In this case, you can get the most up-to-date code by installing Transformers from source with the command `pip install git+https://github.com/huggingface/transformers.git` [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+    "elapsed_s": 9.864354750025086,
+    "exit_code": 1
+  },
+  "checkpoint_header_audit": {
+    "shards": 274,
+    "tensors": 143496,
+    "tensor_bytes": 797413430664,
+    "tensor_gib": 742.6491292789578,
+    "dtype_bytes": {
+      "I8": 757546959360,
+      "F32": 25986718600,
+      "BF16": 13879752704
+    },
+    "category_bytes": {
+      "backbone_and_other": 557966183872,
+      "mtp": 17286159752,
+      "engram_embedding_and_scale": 221190580800,
+      "vision_aligner": 970506240
+    },
+    "trained_tensor_bytes_downloaded": 0,
+    "export_metadata_integrity": {
+      "config.json": {
+        "observed_sha256": "1b2ed579c6a221f68f49222d470dab2068b23a3efc17d969b7a909e684e06316",
+        "export_sha256": "1b2ed579c6a221f68f49222d470dab2068b23a3efc17d969b7a909e684e06316",
+        "matches_export": true
+      },
+      "quant_model_description.json": {
+        "observed_sha256": "2006d73f44523ca9d5a1f5494b6351e04729ab9e5825d0fd43a75f6f4fcede8e",
+        "export_sha256": "2006d73f44523ca9d5a1f5494b6351e04729ab9e5825d0fd43a75f6f4fcede8e",
+        "matches_export": true
+      },
+      "quant_model_weights.safetensors.index.json": {
+        "observed_sha256": "0dc009ac93014cb0848acec2140223455b14733a82cfdbefc97c1b8c19559dfb",
+        "export_sha256": "b996ddcd393e1512cca8cf210d54f63e3caaf2f472b48192befdcc69546a7e44",
+        "matches_export": false
+      },
+      "README.md": {
+        "observed_sha256": "fe0edcfd5750ddf9675866ff7d5c7f69fdccb86ef7bf2a1f88ddb5e2b706e1f8",
+        "export_sha256": "71a840b9e096187b638d0171276859f0d6bce2efb8769672b817fea4ce24f589",
+        "matches_export": false
+      }
+    },
+    "embedding_storage": {
+      "version": 1,
+      "modules": {
+        "layers.1.engram.embed": {
+          "format": "int8_sym",
+          "group_size": 32,
+          "axis": 1,
+          "scale_suffix": "scale",
+          "scale_dtype": "float32",
+          "output_dtype": "bfloat16"
+        },
+        "layers.14.engram.embed": {
+          "format": "int8_sym",
+          "group_size": 32,
+          "axis": 1,
+          "scale_suffix": "scale",
+          "scale_dtype": "float32",
+          "output_dtype": "bfloat16"
+        }
+      }
+    },
+    "readme_describes_bf16": true
+  },
+  "source_layout_comparison_only": {
+    "before_free_hbm_gib": 730.755859375,
+    "checkpoint_tensor_gib": 742.6491292789578,
+    "ideal_equal_shard_tensor_gib": 92.83114115986973,
+    "payload_exceeds_current_free_gib": 11.893269903957844,
+    "runtime_tensor_sharding_measured": false,
+    "oom_observed": false
+  },
+  "rank_memory": [
+    {
+      "rank": 0,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4773,
+      "before_free_gib": 91.3388671875,
+      "after_used_mib": 4773,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.5484733581543,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    },
+    {
+      "rank": 1,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4765,
+      "before_free_gib": 91.3466796875,
+      "after_used_mib": 4765,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.55691528320312,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    },
+    {
+      "rank": 2,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4767,
+      "before_free_gib": 91.3447265625,
+      "after_used_mib": 4767,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.55475997924805,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    },
+    {
+      "rank": 3,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4766,
+      "before_free_gib": 91.345703125,
+      "after_used_mib": 4766,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.55657577514648,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    },
+    {
+      "rank": 4,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4774,
+      "before_free_gib": 91.337890625,
+      "after_used_mib": 4774,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.54729843139648,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    },
+    {
+      "rank": 5,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4764,
+      "before_free_gib": 91.34765625,
+      "after_used_mib": 4764,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.55628967285156,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    },
+    {
+      "rank": 6,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4763,
+      "before_free_gib": 91.3486328125,
+      "after_used_mib": 4763,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.55742645263672,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    },
+    {
+      "rank": 7,
+      "health": "Warning",
+      "physical_hbm_gib": 96.0,
+      "before_used_mib": 4766,
+      "before_free_gib": 91.345703125,
+      "after_used_mib": 4766,
+      "smoke_runtime_total_gib": 91.75,
+      "smoke_runtime_free_gib": 90.55613327026367,
+      "smoke_peak_allocated_bytes": 20996608,
+      "target_weight_bytes": null,
+      "target_activation_peak_bytes": null,
+      "target_runtime_graph_workspace_bytes": null,
+      "target_kv_capacity_bytes": null,
+      "target_kv_token_capacity": null
+    }
+  ],
+  "request_matrix": [
+    {
+      "prompt_tokens_requested": 8000,
+      "completion_tokens_requested": 32,
+      "requests_attempted": 0,
+      "success_rate": null,
+      "observed_prompt_tokens": null,
+      "observed_completion_tokens": null,
+      "reason": "engine initialization failed before weight loading"
+    },
+    {
+      "prompt_tokens_requested": 32000,
+      "completion_tokens_requested": 32,
+      "requests_attempted": 0,
+      "success_rate": null,
+      "observed_prompt_tokens": null,
+      "observed_completion_tokens": null,
+      "reason": "engine initialization failed before weight loading"
+    },
+    {
+      "prompt_tokens_requested": 100000,
+      "completion_tokens_requested": 32,
+      "requests_attempted": 0,
+      "success_rate": null,
+      "observed_prompt_tokens": null,
+      "observed_completion_tokens": null,
+      "reason": "engine initialization failed before weight loading"
+    },
+    {
+      "prompt_tokens_requested": 200000,
+      "completion_tokens_requested": 32,
+      "requests_attempted": 0,
+      "success_rate": null,
+      "observed_prompt_tokens": null,
+      "observed_completion_tokens": null,
+      "reason": "engine initialization failed before weight loading"
+    }
+  ],
+  "concurrency_handoff": {
+    "target_config_available": false,
+    "reason": "unsupported target architecture in the measured stack"
+  },
+  "cleanup": {
+    "all_cards_idle": true,
+    "reservation_released": true,
+    "reservation_id": "mac13-v41-b076-20261013",
+    "reservation_released_at": "2026-10-13T12:15:10.13569+08:00"
+  }
+}
