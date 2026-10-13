@@ -45,6 +45,8 @@ export NDS_CONFIGS_JSON='[[8192,1],[16384,1],[24576,1],[8192,8],[16384,8],[24576
 
 分析：`python3 benchmarks/kv_tier/analyze.py <source归档的results目录>`。分析器拒绝未完成运行、短输出、SSE合并事件、不完整或混合副本、缺少加载、没有物理盘读等情况；成功产生requests.csv与summary.json。CPU验证：`python3 -m unittest discover -s tests -p 'test_kv_tier*.py' -v`。这些unit fixture属于模拟输入，不是设备测量。
 
+仓内完整脱敏JSON压缩为`reports/mac16/data/raw-json.tar.gz`；CSV/summary保留为文本。离线复核时解压到空目录，再对该目录显式运行`analyze.py --allow-partial`。原始未脱敏双机归档及失败日志通过Multica附件交付。
+
 从SSD阶段继续可设置`NDS_MODES_JSON='["disk"]'`；默认两个mode。分析已完整完成的部分阶段可显式加`--allow-partial`，仍逐项验证位置、真实重算counter及三轮完整性，保留run_error和experiment_complete=false，不等于整项任务通过。新版端口检查使用SO_REUSEADDR排除TIME_WAIT，活跃监听仍拒绝。新版实际local/remote worker预热未NPU复测，首次执行需重新部署最新指纹；远端r3/r4旧指纹不能直接复用。
 
 r4在source初始化阶段出现HIXL/AICPU错误，未完成SSD native校验或模型请求；共享进程在门禁后出现，尚未确认因果。新版Node.start再次检查四卡占用，并检测已观测的TransferEngine致命错误后通过finally停止自有服务。这两项改动仅语法/CPU验证；取得稳定窗口后先做小规模TE/SSD读回，不直接扩大矩阵。
