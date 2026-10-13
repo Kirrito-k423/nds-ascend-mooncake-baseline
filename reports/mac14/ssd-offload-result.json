@@ -1,0 +1,83 @@
+{
+  "protocol": "ascend",
+  "segment_bytes": 67108864,
+  "payload_bytes": 1048576,
+  "ssd_verified": true,
+  "offload_settings": {
+    "MOONCAKE_OFFLOAD_LOCAL_BUFFER_SIZE_BYTES": "33554432",
+    "MOONCAKE_OFFLOAD_TOTAL_SIZE_LIMIT_BYTES": "536870912",
+    "MOONCAKE_OFFLOAD_BUCKET_MAX_TOTAL_SIZE": "536870912",
+    "MOONCAKE_OFFLOAD_BUCKET_SIZE_LIMIT_BYTES": "8388608",
+    "MOONCAKE_OFFLOAD_BUCKET_KEYS_LIMIT": "1",
+    "MOONCAKE_OFFLOAD_HEARTBEAT_INTERVAL_SECONDS": "1",
+    "MOONCAKE_OFFLOAD_FILE_STORAGE_PATH": "/offload",
+    "MOONCAKE_OFFLOAD_STORAGE_BACKEND_DESCRIPTOR": "bucket_storage_backend",
+    "MOONCAKE_OFFLOAD_USE_URING": "false"
+  },
+  "master_command": [
+    "mooncake_master",
+    "--port=50284",
+    "--metrics_port=50285",
+    "--enable_offload=true"
+  ],
+  "setup_doc": "setup(*args, **kwargs)\nOverloaded function.\n\n1. setup(self: mooncake.store.MooncakeDistributedStore, local_hostname: str, metadata_server: str, global_segment_size: int, local_buffer_size: int, protocol: str, rdma_devices: str, master_server_addr: str, engine: object = None, enable_ssd_offload: bool = False, ssd_offload_path: str = '') -> int\n\n2. setup(self: mooncake.store.MooncakeDistributedStore, config: dict) -> int\n\nSetup the store with a configuration dictionary.\nSupported keys:\n  local_hostname (required): Local hostname.\n  metadata_server (required): Metadata server address.\n  global_segment_size: Global segment size (default 16MB).\n  local_buffer_size: Local buffer size (default 16MB).\n  protocol: Transfer protocol (default 'tcp').\n  rdma_devices: RDMA device list.\n  master_server_addr: Master server address.\n  ipc_socket_path: IPC socket path.\n  enable_ssd_offload: Enable SSD offload (default false).\n  ssd_offload_path: SSD storage directory path (overrides env var).\n",
+  "setup_return": 0,
+  "put_return": 0,
+  "replicas_after_put": [
+    {
+      "memory": true,
+      "local_disk": false,
+      "disk": false,
+      "status": "ReplicaStatus.COMPLETE"
+    },
+    {
+      "memory": false,
+      "local_disk": true,
+      "disk": false,
+      "status": "ReplicaStatus.COMPLETE"
+    }
+  ],
+  "wait_for_lease_expiry_s": 6,
+  "clear_memory_return": [
+    "mac14-ssd-native-1791864618862043430"
+  ],
+  "replicas_before_read": [
+    {
+      "memory": false,
+      "local_disk": true,
+      "disk": false,
+      "status": "ReplicaStatus.COMPLETE"
+    }
+  ],
+  "files": [
+    {
+      "file": "7339477475329.meta",
+      "bytes": 50,
+      "allocated": 4096
+    },
+    {
+      "file": "7339477475329.bucket",
+      "bytes": 1048612,
+      "allocated": 1052672
+    }
+  ],
+  "reads": [
+    {
+      "return_bytes": 1048576,
+      "elapsed_ms": 1.4820699871052057,
+      "exact": true
+    },
+    {
+      "return_bytes": 1048576,
+      "elapsed_ms": 0.5154500249773264,
+      "exact": true
+    },
+    {
+      "return_bytes": 1048576,
+      "elapsed_ms": 0.4136300121899694,
+      "exact": true
+    }
+  ],
+  "sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+  "master_exit_after_cleanup": -15
+}
