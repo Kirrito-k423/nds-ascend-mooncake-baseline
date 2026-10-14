@@ -1,0 +1,165 @@
+[
+  {
+    "record": "a5-b02-1-bundle-sha-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 2.592928791884333
+  },
+  {
+    "record": "a5-b02-1-check-upload-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 4.9757319167256355
+  },
+  {
+    "record": "a5-b02-1-cpu-check-upload-x3-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 2.1642238330096006
+  },
+  {
+    "record": "a5-b02-1-export-progress-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 5.141132416669279
+  },
+  {
+    "record": "a5-b02-1-export-progress-x2-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 3.862041249871254
+  },
+  {
+    "record": "a5-b02-1-export-progress-x3-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 5.659082833211869
+  },
+  {
+    "record": "a5-b02-1-http-upload-x3-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 2.189320624805987
+  },
+  {
+    "record": "a5-b02-1-mkdir-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 1.8332639578729868
+  },
+  {
+    "record": "a5-b02-1-scp-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 7.301099999807775
+  },
+  {
+    "record": "a5-b02-2-bundle-sha-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 1.5544825000688434
+  },
+  {
+    "record": "a5-b02-2-check-upload-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 2.2131774998269975
+  },
+  {
+    "record": "a5-b02-2-copy-progress-x2-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 7.556559333112091
+  },
+  {
+    "record": "a5-b02-2-cpu-check-upload-x3-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 2.258126416709274
+  },
+  {
+    "record": "a5-b02-2-image-precopy-x2-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 1.9367607082240283
+  },
+  {
+    "record": "a5-b02-2-lan-image-x3-terminal.json",
+    "exit_code": 28,
+    "elapsed_s": 31.874605167191476
+  },
+  {
+    "record": "a5-b02-2-lan-image-x4-terminal.json",
+    "exit_code": 1,
+    "elapsed_s": 1.8249842920340598
+  },
+  {
+    "record": "a5-b02-2-lan-image-x5-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 204.14326787507161
+  },
+  {
+    "record": "a5-b02-2-lan-progress-x5-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 2.512357000261545
+  },
+  {
+    "record": "a5-b02-2-mkdir-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 3.706128958147019
+  },
+  {
+    "record": "a5-b02-2-scp-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 9.13081341702491
+  },
+  {
+    "record": "a5-b02-2-scp3-image-tar-gz-x2-terminal.json",
+    "exit_code": 1,
+    "elapsed_s": 141.4209872907959
+  },
+  {
+    "record": "a5-b02-3-bundle-sha-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 1.578111917246133
+  },
+  {
+    "record": "a5-b02-3-check-upload-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 2.7587049580179155
+  },
+  {
+    "record": "a5-b02-3-cpu-check-upload-x3-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 1.147028874605894
+  },
+  {
+    "record": "a5-b02-3-lan-image-x3-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 204.13599166739732
+  },
+  {
+    "record": "a5-b02-3-lan-progress-x3-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 0.4539245003834367
+  },
+  {
+    "record": "a5-b02-3-lan-progress-x4-terminal.json",
+    "exit_code": 1,
+    "elapsed_s": 0.44926166720688343
+  },
+  {
+    "record": "a5-b02-3-mkdir-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 6.258039417210966
+  },
+  {
+    "record": "a5-b02-3-scp-x1-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 7.394037959165871
+  },
+  {
+    "record": "b02-scp3-channel-x2-terminal.json",
+    "exit_code": 0,
+    "elapsed_s": 11.126254041213542
+  },
+  {
+    "record": "image-stream-x1-terminal.json",
+    "exit_codes": {
+      "a5-b02-1": 255,
+      "a5-b02-2": 255,
+      "a5-b02-3": 1
+    },
+    "compressed_stream_bytes": 0,
+    "compressed_stream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elapsed_s": 17.828710000030696,
+    "local_image_file_created": false,
+    "error": null
+  }
+]

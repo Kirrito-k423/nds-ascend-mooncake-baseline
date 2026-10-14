@@ -1,5 +1,11 @@
 # 工作审视报告
 
+## 2026-10-14 B02迁移更新
+
+三台B02同SHA镜像、原完整配置/tokenizer和最新kit/probe已迁移，19文件SHA与CPU离线读取三台通过。新增6个中台task全部终态/archiveReady，含1个修正后通过的CPU前置失败，累计133。传输断连、低速中转、串行服务/并发客户端不匹配和错误partial存在性假设均保留；CPU检查明确关闭设备backend自动加载，不把它当NPU初始化通过。
+
+用户安排的中台维护已升级forwarded-resource-identity-v1，旧proxy去重限制已修复；三台两次新鲜快照均8卡空闲/Warning，仍未证明计算可用或独占。当前问题已转为尚未验证的10MiB×8key/四worker native和T3/T4模型门禁。用户另行安排内网AI接续，SE交接见PR#5，本轮交付迁移，不重复启动同一模型计划；issue in_progress，资源复查规则已停用、截止归档规则保留。以下阶段审视的资源阻塞描述保留为历史，不能作为当前状态。
+
 ## 原定目标
 
 五档KV位置与TTFT/decode、SSD关键路径、可调用direct对照或明确缺口，3天预算内交付原始数据、报告、使能手册及PR。

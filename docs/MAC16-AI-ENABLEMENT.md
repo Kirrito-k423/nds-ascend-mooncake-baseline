@@ -4,7 +4,7 @@
 
 source是持有KV副本的源机器；destination是另一台物理机器。T1在source处理请求并读本机DRAM，T2在destination处理请求并从source读远端DRAM；T3/T4同样区分本机/远端SSD。两端各有T0冷请求基线，source/destination不是同一请求的两个阶段。
 
-2026-10-14 已核验 B02-1/2/3 的数据地址、RAM、挂载和镜像。B02-1 有精确目标镜像，B02-2/3 按标签及 SHA 均缺失；三台未见已挂载共享文件存储，原 Qwen 路径缺模型元数据。仅配置/tokenizer和最新脚本的私有迁移附件约3.7MB，不含真实权重。`benchmarks/prepare_b02_node.sh` 可在镜像与本机身份匹配后准备独立目录，不启动模型；尚未远端执行。具体映射、证据与缺口见 `reports/mac16/b02/MIGRATION.md`。后续优先复查 B02 的双机窗口，仍受 proxy host 去重预约限制。
+2026-10-14 已完成 B02-1/2/3 迁移：三台同一镜像SHA、最新kit/probe及完整原配置/tokenizer，19文件SHA和CPU离线配置/tokenizer往返均通过。未复制真实权重，三台工作目录为 `/home/t00906153/nds-mac16-b02-20261014`；source默认B02-1、destination B02-2，B02-3备用。临时服务、压缩镜像及残片已清。详见 `reports/mac16/b02/MIGRATION.md`。本轮未做新NPU实验；中台已升级forwarded-resource-identity-v1，原proxy去重限制已修复。用户安排内网AI接续，内网交接见PR#5的 `docs/MAC16-INTRANET-HANDOFF.md`；资源候选/CPU校验不代替预约、计算/HCCL、native和模型门禁。
 
 ## 资源与版本门禁
 

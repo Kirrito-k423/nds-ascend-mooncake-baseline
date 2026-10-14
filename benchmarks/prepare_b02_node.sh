@@ -8,7 +8,7 @@ export MAC16_BUNDLE_ROOT MAC16_MACHINE_ID MAC16_DESTINATION_ID
 cd "$MAC16_BUNDLE_ROOT"
 sha256sum -c SHA256SUMS
 python3 - <<'PY'
-import json,os,shlex,shutil,subprocess
+import hashlib,json,os,shlex,shutil,subprocess
 from pathlib import Path
 bundle=Path(os.environ['MAC16_BUNDLE_ROOT'])
 nodes=json.loads((bundle/'deploy/machines.json').read_text())['nodes']
@@ -26,6 +26,7 @@ assert not target.exists() and not target.is_symlink(),'Existing path: inspect o
 target.mkdir(parents=True)
 shutil.copytree(bundle/'payload/kv_tier',target/'kv_tier')
 shutil.copytree(bundle/'payload/model',target/'model')
+shutil.copy2(bundle/'payload/sdk_tier_probe.py',target/'sdk_tier_probe.py')
 role='source' if mid=='a5-b02-1' else 'destination'
 env={'NDS_ROLE':role,'NDS_SOURCE_HOST':nodes['a5-b02-1']['data_ip'],
      'NDS_DESTINATION_HOST':nodes[dest]['data_ip'],'NDS_LOCAL_HOST':nodes[mid]['data_ip'],
@@ -34,5 +35,9 @@ env={'NDS_ROLE':role,'NDS_SOURCE_HOST':nodes['a5-b02-1']['data_ip'],
      'NDS_VISIBLE_DEVICES':'0,1,2,3','NDS_MODES_JSON':'["disk"]',
      'NDS_CONFIGS_JSON':'[[1024,1]]'}
 (target/'launch.env').write_text(''.join('export '+k+'='+shlex.quote(v)+'\n' for k,v in env.items()))
+manifest={'machine_id':mid,'destination_id':dest,'image':image,'image_id':actual,
+          'model_started':False,'files':{str(p.relative_to(target)):hashlib.sha256(p.read_bytes()).hexdigest()
+          for p in sorted(target.rglob('*')) if p.is_file()}}
+(target/'staging-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('Metadata and toolkit staged; no NPU process started. Reservation and native gates remain required.')
 PY
