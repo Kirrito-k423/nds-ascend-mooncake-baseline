@@ -1,0 +1,486 @@
+[
+  {
+    "run": "c1",
+    "task_id": "mac16-b02-layout-c1-20261014",
+    "exit_code": 1,
+    "archiveReady": true,
+    "cases": [],
+    "error": "Traceback (most recent call last):\n  File \"/home/t00906153/nds-mac16-layout-20261014-c1/sdk_layout_group.py\", line 108, in main\n    rows=[json.loads((gate_out/f'tp4-rank{rank}.json').read_text()) for rank in range(4)]\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/t00906153/nds-mac16-layout-20261014-c1/sdk_layout_group.py\", line 108, in <listcomp>\n    rows=[json.loads((gate_out/f'tp4-rank{rank}.json').read_text()) for rank in range(4)]\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib64/python3.11/pathlib.py\", line 1058, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib64/python3.11/pathlib.py\", line 1044, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/root/.simplehtmlwatch/tasks/mac16-b02-layout-c1-20261014/results/c1-source-gate/tp4-rank0.json'\n",
+    "terminals": [],
+    "gates": [
+      {
+        "host": "177.5.21.1",
+        "exit_code": 1,
+        "run": "c1-source-gate"
+      }
+    ]
+  },
+  {
+    "run": "c2",
+    "task_id": "mac16-b02-layout-c2-20261014",
+    "exit_code": 1,
+    "archiveReady": true,
+    "cases": [
+      {
+        "run": "c2-s0",
+        "tier": "memory",
+        "workers": 1,
+        "keys_per_worker": 1,
+        "cross": false,
+        "cohorts": 3,
+        "functional_samples_pass": true,
+        "error": null
+      },
+      {
+        "run": "c2-s1",
+        "tier": "disk",
+        "workers": 1,
+        "keys_per_worker": 1,
+        "cross": false,
+        "cohorts": 3,
+        "functional_samples_pass": true,
+        "error": null
+      },
+      {
+        "run": "c2-s2",
+        "tier": "disk",
+        "workers": 1,
+        "keys_per_worker": 8,
+        "cross": false,
+        "cohorts": 3,
+        "functional_samples_pass": true,
+        "error": null
+      },
+      {
+        "run": "c2-s3",
+        "tier": "disk",
+        "workers": 4,
+        "keys_per_worker": 8,
+        "cross": false,
+        "cohorts": 0,
+        "functional_samples_pass": false,
+        "error": "Traceback (most recent call last):\n  File \"/home/t00906153/nds-mac16-layout-20261014-c2/sdk_layout_group.py\", line 128, in main\n    if tier=='disk':proof=source.command('prepare')\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/t00906153/nds-mac16-layout-20261014-c2/sdk_layout_group.py\", line 57, in command\n    return self.receive('result',op)['result']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/t00906153/nds-mac16-layout-20261014-c2/sdk_layout_group.py\", line 51, in receive\n    if item['kind'] in ['error','eof']:raise RuntimeError(item)\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: {'kind': 'error', 'error': 'Traceback (most recent call last):\\n  File \"/layout/sdk_layout_probe.py\", line 199, in main\\n    assert all(v and all(d[\\'local_disk\\'] and not d[\\'memory\\'] and d[\\'status\\'].endswith(\\'COMPLETE\\') for d in v) for v in after.values())\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAssertionError\\n'}\n"
+      }
+    ],
+    "error": "Traceback (most recent call last):\n  File \"/home/t00906153/nds-mac16-layout-20261014-c2/sdk_layout_group.py\", line 128, in main\n    if tier=='disk':proof=source.command('prepare')\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/t00906153/nds-mac16-layout-20261014-c2/sdk_layout_group.py\", line 57, in command\n    return self.receive('result',op)['result']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/t00906153/nds-mac16-layout-20261014-c2/sdk_layout_group.py\", line 51, in receive\n    if item['kind'] in ['error','eof']:raise RuntimeError(item)\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: {'kind': 'error', 'error': 'Traceback (most recent call last):\\n  File \"/layout/sdk_layout_probe.py\", line 199, in main\\n    assert all(v and all(d[\\'local_disk\\'] and not d[\\'memory\\'] and d[\\'status\\'].endswith(\\'COMPLETE\\') for d in v) for v in after.values())\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAssertionError\\n'}\n",
+    "terminals": [
+      {
+        "host": "177.5.21.1",
+        "coordinator_child_pid": 931874,
+        "exit_code": 0,
+        "container": "mac16-layout-c2-s0-writer",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 253,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "177.5.21.1",
+        "coordinator_child_pid": 936701,
+        "exit_code": 0,
+        "container": "mac16-layout-c2-s1-writer",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 253,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "177.5.21.1",
+        "coordinator_child_pid": 943538,
+        "exit_code": 0,
+        "container": "mac16-layout-c2-s2-writer",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 254,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "177.5.21.1",
+        "coordinator_child_pid": 949551,
+        "exit_code": 1,
+        "container": "mac16-layout-c2-s3-writer",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 253,
+                "exit_code": 0
+              },
+              {
+                "rank": 1,
+                "pid": 254,
+                "exit_code": 0
+              },
+              {
+                "rank": 2,
+                "pid": 255,
+                "exit_code": 0
+              },
+              {
+                "rank": 3,
+                "pid": 256,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "gates": [
+      {
+        "host": "177.5.21.1",
+        "exit_code": 0,
+        "run": "c2-source-gate",
+        "ranks": [
+          {
+            "pid": 288,
+            "completed_wall_ns": 1791961294539007700,
+            "rank": 0,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07813050178810954,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 289,
+            "completed_wall_ns": 1791961294539009020,
+            "rank": 1,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07806550129316747,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 290,
+            "completed_wall_ns": 1791961294539079380,
+            "rank": 2,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.08037200022954494,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 291,
+            "completed_wall_ns": 1791961294539023140,
+            "rank": 3,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07890449778642505,
+            "device_name": "Ascend950DT_9582"
+          }
+        ]
+      },
+      {
+        "host": "177.5.23.1",
+        "exit_code": 0,
+        "run": "c2-peer-gate",
+        "ranks": [
+          {
+            "pid": 289,
+            "completed_wall_ns": 1791961343688045680,
+            "rank": 0,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07536499906564131,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 290,
+            "completed_wall_ns": 1791961343688042430,
+            "rank": 1,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07523099920945242,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 291,
+            "completed_wall_ns": 1791961343688044410,
+            "rank": 2,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07527900015702471,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 292,
+            "completed_wall_ns": 1791961343688043370,
+            "rank": 3,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07521700026700273,
+            "device_name": "Ascend950DT_9582"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "run": "c3",
+    "task_id": "mac16-b02-layout-c3-20261014",
+    "exit_code": 1,
+    "archiveReady": true,
+    "cases": [
+      {
+        "run": "c3-s3",
+        "tier": "disk",
+        "workers": 4,
+        "keys_per_worker": 8,
+        "cross": false,
+        "cohorts": 3,
+        "functional_samples_pass": true,
+        "error": null
+      }
+    ],
+    "error": "Traceback (most recent call last):\n  File \"/home/t00906153/nds-mac16-layout-20261014-c3/sdk_layout_group.py\", line 158, in main\n    assert all(t['exit_code']==0 for t in report['terminals']), 'Nonzero endpoint terminal'\nAssertionError: Nonzero endpoint terminal\n",
+    "terminals": [
+      {
+        "host": "177.5.21.1",
+        "coordinator_child_pid": 966679,
+        "exit_code": 1,
+        "container": "mac16-layout-c3-s3-writer",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 254,
+                "exit_code": 0
+              },
+              {
+                "rank": 1,
+                "pid": 255,
+                "exit_code": 0
+              },
+              {
+                "rank": 2,
+                "pid": 256,
+                "exit_code": -15
+              },
+              {
+                "rank": 3,
+                "pid": 257,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "gates": []
+  },
+  {
+    "run": "c4",
+    "task_id": "mac16-b02-layout-c4-20261014",
+    "exit_code": 0,
+    "archiveReady": true,
+    "cases": [
+      {
+        "run": "c4-s3",
+        "tier": "disk",
+        "workers": 4,
+        "keys_per_worker": 8,
+        "cross": false,
+        "cohorts": 3,
+        "functional_samples_pass": true,
+        "error": null
+      },
+      {
+        "run": "c4-s4",
+        "tier": "disk",
+        "workers": 4,
+        "keys_per_worker": 8,
+        "cross": true,
+        "cohorts": 3,
+        "functional_samples_pass": true,
+        "error": null
+      }
+    ],
+    "error": null,
+    "terminals": [
+      {
+        "host": "177.5.21.1",
+        "coordinator_child_pid": 988649,
+        "exit_code": 0,
+        "container": "mac16-layout-c4-s3-writer",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 256,
+                "exit_code": 0
+              },
+              {
+                "rank": 1,
+                "pid": 257,
+                "exit_code": 0
+              },
+              {
+                "rank": 2,
+                "pid": 258,
+                "exit_code": 0
+              },
+              {
+                "rank": 3,
+                "pid": 259,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "177.5.22.1",
+        "coordinator_child_pid": 1001129,
+        "exit_code": 0,
+        "container": "mac16-layout-c4-s4-reader",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 221,
+                "exit_code": 0
+              },
+              {
+                "rank": 1,
+                "pid": 222,
+                "exit_code": 0
+              },
+              {
+                "rank": 2,
+                "pid": 223,
+                "exit_code": 0
+              },
+              {
+                "rank": 3,
+                "pid": 224,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "177.5.21.1",
+        "coordinator_child_pid": 997109,
+        "exit_code": 0,
+        "container": "mac16-layout-c4-s4-writer",
+        "probe_terminals": [
+          {
+            "kind": "terminal",
+            "workers": [
+              {
+                "rank": 0,
+                "pid": 253,
+                "exit_code": 0
+              },
+              {
+                "rank": 1,
+                "pid": 254,
+                "exit_code": 0
+              },
+              {
+                "rank": 2,
+                "pid": 255,
+                "exit_code": 0
+              },
+              {
+                "rank": 3,
+                "pid": 256,
+                "exit_code": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "gates": [
+      {
+        "host": "177.5.22.1",
+        "exit_code": 0,
+        "run": "c4-peer-gate",
+        "ranks": [
+          {
+            "pid": 289,
+            "completed_wall_ns": 1791962526175330550,
+            "rank": 0,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07386950019281358,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 290,
+            "completed_wall_ns": 1791962526175326910,
+            "rank": 1,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07375049754045904,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 291,
+            "completed_wall_ns": 1791962526175327720,
+            "rank": 2,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07367449870798737,
+            "device_name": "Ascend950DT_9582"
+          },
+          {
+            "pid": 292,
+            "completed_wall_ns": 1791962526175327540,
+            "rank": 3,
+            "world_size": 4,
+            "all_reduce_correct": true,
+            "integer_matmul_exact": true,
+            "mean_ms": 0.07374699926003814,
+            "device_name": "Ascend950DT_9582"
+          }
+        ]
+      }
+    ]
+  }
+]

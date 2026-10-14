@@ -1,0 +1,17 @@
+{
+  "generation": "r4",
+  "sha256": "1b78015c891c8b26b41bfe8e1f90021c1205bfb57ec1d955fbe16d53b9e33ad1",
+  "files": {
+    "analyze.py": "047d966b48570040b3d6dc57ab41d80b6560bfb3f46609862a35f8e290aa51a7",
+    "idle_gate.py": "434ea87044a5201c756754dbe69460e3a753b124f29730f8dba43bd068d93bb3",
+    "instrument.py": "583a9cbfc33c10b9a9712496712a044db90a3b9628f7a59c59838561faa8a52b",
+    "node.py": "aa362ee960f392e4ab87407b95dbd2d84bb256ce8c432216c57d633b15efe8af",
+    "run.py": "52913e828c70e349b5b2170b923b88d1a459f0ce28ab7cd9dc67096c8c9b3c16",
+    "store_agent.py": "2e7e70a7f5755d5b35bc03e3d738da4fed5d06b94a390e58f26cfc7082e365ba",
+    "stream.py": "944f415ba8971f3778cb27e672f004dea865ad76a4edb604acbd51c7bfaaa889",
+    "wait_master.py": "1f9deeadd27cb62cc9d26073bbaa5f8f237c14dc3927fd0236722ed9390a022e"
+  },
+  "base_commit": "1b05f19b425889c7bc7d139f75f710d56126c932",
+  "mooncake_document_tag": "v0.3.11.post1",
+  "mooncake_document_commit": "e9c61075720039bcfc5fffd19f847608402be3d0"
+}

@@ -38,3 +38,6 @@ docker build -f Dockerfile.kv-import-fix -t nds-vllm-source:kv-import-fix-202610
 原修正已完成真实 A5 Store 单测 **313 passed / 10 skipped**、新增回归 **1 passed** 及双机负载验证。完整上游仓库测试未运行，补丁未上游合入。为版本归档，实验脚本的机器地址、节点名称和远端目录已参数化；本次只对这些配置调整执行本地语法及离线分析验证，没有重新宣称 NPU 实测。
 
 保留上游文件的原始版权声明；vLLM-Ascend 的许可证位于 `third_party/LICENSE.vllm-ascend`。仓库上传不代表向上游提交 PR 或完成上游验收。
+## MAC-16 阶段实验
+
+1024/C1、32输出的T0/T1/T2校准与原始脱敏数据见 [报告](reports/mac16/BASELINE.md)，复现见 [使能手册](docs/MAC16-AI-ENABLEMENT.md)。T3/T4及长上下文扫描待稳定双机资源；不能视为五档全部完成。

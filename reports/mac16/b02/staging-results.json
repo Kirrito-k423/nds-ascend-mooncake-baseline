@@ -1,0 +1,104 @@
+{
+  "a5-b02-2": {
+    "machine_id": "a5-b02-2",
+    "image_id": "sha256:64155cd1bb77edf3c927a23c83cdad49e9d5394bd4b90113bc02ce017897c270",
+    "toolkit_sha256": "56cedb68c9ba73d95613238215f0aa41a9c45bb9273098ec6d6fa94e0ce8076b",
+    "sdk_probe_sha256": "e5367b7dcbe5f3105fef6e14b085f420c48988e71a873283627b02436e95009b",
+    "cpu_backend_autoload_disabled": true,
+    "verified_file_count": 19,
+    "cpu": {
+      "config_layers": 80,
+      "tokenizer_class": "Qwen2Tokenizer",
+      "tokenizer_smoke_tokens": 8,
+      "tokenizer_roundtrip": true,
+      "versions": {
+        "torch": "2.10.0",
+        "torch-npu": "2.10.0.post4",
+        "vllm": "0.23.0+nds1.empty",
+        "transformers": "5.5.4",
+        "mooncake-transfer-engine": null
+      }
+    },
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/nvme0n1p4",
+          "fstype": "ext4",
+          "options": "rw,relatime,seclabel,stripe=32"
+        }
+      ]
+    },
+    "model_npu_validated": false,
+    "new_compute_hccl_validated": false,
+    "container_removed": true
+  },
+  "a5-b02-3": {
+    "machine_id": "a5-b02-3",
+    "image_id": "sha256:64155cd1bb77edf3c927a23c83cdad49e9d5394bd4b90113bc02ce017897c270",
+    "toolkit_sha256": "56cedb68c9ba73d95613238215f0aa41a9c45bb9273098ec6d6fa94e0ce8076b",
+    "sdk_probe_sha256": "e5367b7dcbe5f3105fef6e14b085f420c48988e71a873283627b02436e95009b",
+    "cpu_backend_autoload_disabled": true,
+    "verified_file_count": 19,
+    "cpu": {
+      "config_layers": 80,
+      "tokenizer_class": "Qwen2Tokenizer",
+      "tokenizer_smoke_tokens": 8,
+      "tokenizer_roundtrip": true,
+      "versions": {
+        "torch": "2.10.0",
+        "torch-npu": "2.10.0.post4",
+        "vllm": "0.23.0+nds1.empty",
+        "transformers": "5.5.4",
+        "mooncake-transfer-engine": null
+      }
+    },
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/nvme0n1p4",
+          "fstype": "ext4",
+          "options": "rw,relatime,seclabel,stripe=32"
+        }
+      ]
+    },
+    "model_npu_validated": false,
+    "new_compute_hccl_validated": false,
+    "container_removed": true
+  },
+  "a5-b02-1": {
+    "machine_id": "a5-b02-1",
+    "image_id": "sha256:64155cd1bb77edf3c927a23c83cdad49e9d5394bd4b90113bc02ce017897c270",
+    "toolkit_sha256": "56cedb68c9ba73d95613238215f0aa41a9c45bb9273098ec6d6fa94e0ce8076b",
+    "sdk_probe_sha256": "e5367b7dcbe5f3105fef6e14b085f420c48988e71a873283627b02436e95009b",
+    "cpu_backend_autoload_disabled": true,
+    "verified_file_count": 19,
+    "cpu": {
+      "config_layers": 80,
+      "tokenizer_class": "Qwen2Tokenizer",
+      "tokenizer_smoke_tokens": 8,
+      "tokenizer_roundtrip": true,
+      "versions": {
+        "torch": "2.10.0",
+        "torch-npu": "2.10.0.post4",
+        "vllm": "0.23.0+nds1.empty",
+        "transformers": "5.5.4",
+        "mooncake-transfer-engine": null
+      }
+    },
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/nvme0n1p4",
+          "fstype": "ext4",
+          "options": "rw,relatime,seclabel,stripe=32"
+        }
+      ]
+    },
+    "model_npu_validated": false,
+    "new_compute_hccl_validated": false,
+    "container_removed": true
+  }
+}
