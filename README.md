@@ -40,4 +40,6 @@ docker build -f Dockerfile.kv-import-fix -t nds-vllm-source:kv-import-fix-202610
 保留上游文件的原始版权声明；vLLM-Ascend 的许可证位于 `third_party/LICENSE.vllm-ascend`。仓库上传不代表向上游提交 PR 或完成上游验收。
 ## MAC-16 阶段实验
 
+内网继续 T3/T4 请从 [内网 AI 交接文档](docs/MAC16-INTRANET-HANDOFF.md) 开始：包括固定代码版本、已开发模块、离线资产/镜像准备、初始化故障定位、待补四 worker 探针与实验验收步骤。
+
 1024/C1、32输出的T0/T1/T2校准与原始脱敏数据见 [报告](reports/mac16/BASELINE.md)，复现见 [使能手册](docs/MAC16-AI-ENABLEMENT.md)。T3/T4及长上下文扫描待稳定双机资源；不能视为五档全部完成。
