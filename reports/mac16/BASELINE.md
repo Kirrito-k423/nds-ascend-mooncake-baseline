@@ -4,6 +4,8 @@
 
 17/17模型请求成功，其中12个正式请求、5个预热或prime；全部真实输入1024、输出32。1/64MiB本机与远端DRAM native读回12/12逐字节及SHA256匹配。数据、失败、脚本与计数窗口均保留。
 
+2026-10-14 的 B02 迁移核验与约3.7MB私有迁移包已准备，见 `b02/MIGRATION.md`。B02-1已有目标镜像，B02-2/3缺镜像；三台原模型路径缺元数据、未见已挂载共享文件存储。6个新增 metadata task 均终态/archiveReady，累计127；没有新增模型请求或SSD模型结果，仍未取得双机预约。
+
 ## W1新增证据（2026-10-13）
 
 单卡native的1/3/10MiB LOCAL_DISK-only各三轮通过，逐字节/SHA/返回长度一致，盘读每轮payload+4096B；模型T3/T4仍0。32 keys小样本不seal、SDK控制hostname与TE endpoint混用、缓存读无物理IO均有对照与修正；64MiB单对象SSD AllocateBatch断言失败，10MiB业务key实测通过，不能由参考源码推定4MiB上限。

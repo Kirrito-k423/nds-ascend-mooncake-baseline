@@ -4,6 +4,8 @@
 
 source是持有KV副本的源机器；destination是另一台物理机器。T1在source处理请求并读本机DRAM，T2在destination处理请求并从source读远端DRAM；T3/T4同样区分本机/远端SSD。两端各有T0冷请求基线，source/destination不是同一请求的两个阶段。
 
+2026-10-14 已核验 B02-1/2/3 的数据地址、RAM、挂载和镜像。B02-1 有精确目标镜像，B02-2/3 按标签及 SHA 均缺失；三台未见已挂载共享文件存储，原 Qwen 路径缺模型元数据。仅配置/tokenizer和最新脚本的私有迁移附件约3.7MB，不含真实权重。`benchmarks/prepare_b02_node.sh` 可在镜像与本机身份匹配后准备独立目录，不启动模型；尚未远端执行。具体映射、证据与缺口见 `reports/mac16/b02/MIGRATION.md`。后续优先复查 B02 的双机窗口，仍受 proxy host 去重预约限制。
+
 ## 资源与版本门禁
 
 从同一 simpleHtmlWatch 实例读取 ready 与最新 npu-smi。ready只表示中台可调度，四张卡必须实际空闲，Warning允许通过真实计算/HCCL校验。先预约再立即复查；预约不能阻止其他入口的训练。忙碌时退出，不停止其他进程。两端镜像、模型配置SHA256及设备范围需记录。
