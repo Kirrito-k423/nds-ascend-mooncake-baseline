@@ -5,10 +5,16 @@ import sys
 source = Path(sys.argv[1]).read_text()
 assert 'from mooncake.store import ReplicateConfig' in source
 assert source.index('from mooncake.store import ReplicateConfig') > source.index('def put(')
-source = source.replace('import threading\n', 'import threading\nimport time\n')
+source = source.replace('import threading\n', 'import threading\nimport time\nimport sys\nsys.path.insert(0,"/task")\nfrom worker_control import WorkerControl\n')
 start = '        return store'
-replacement = '''        logger.info("NDS_TRACE %s", json.dumps({"op": "store_ready",
+replacement = '''        nds_control_path = None
+        self._nds_worker_control = None
+        if self._contribute_memory and self.config.global_segment_size > 0:
+            self._nds_worker_control = WorkerControl(store, os.environ["NDS_LOCAL_HOST"])
+            nds_control_path = self._nds_worker_control.start("/evidence/disk") if os.environ.get("NDS_WORKER_CLEAR") == "1" else None
+        logger.info("NDS_TRACE %s", json.dumps({"op": "store_ready",
                     "segment_name": store.get_hostname(), "transport_endpoint": self.local_seg,
+                    "worker_pid": os.getpid(), "control_path": nds_control_path,
                     "contributes": self._contribute_memory,
                     "pool_bytes": self.config.global_segment_size if self._contribute_memory else 0}))
         return store'''
@@ -30,6 +36,8 @@ source = source.replace(start, replacement)
 start = '            res = self.store.batch_put_from_multi_buffers(keys, addrs, sizes, config)'
 replacement = '''            logger.info("NDS_TRACE %s", json.dumps({"op": "put", "keys": keys, "sizes": sizes,
                         "begin_ns": time.perf_counter_ns(), "local_seg": self.local_seg}))
-            res = self.store.batch_put_from_multi_buffers(keys, addrs, sizes, config)'''
+            res = self.store.batch_put_from_multi_buffers(keys, addrs, sizes, config)
+            if self._nds_worker_control is not None:
+                self._nds_worker_control.remember(keys, list(res))'''
 assert source.count(start) == 1
 Path(sys.argv[2]).write_text(source.replace(start, replacement))

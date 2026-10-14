@@ -13,6 +13,15 @@ def line(name,endpoint='SOURCE:16158',pool=268435456,contributes=True):
         'transport_endpoint':endpoint,'contributes':contributes,'pool_bytes':pool})
 
 class SegmentTest(unittest.TestCase):
+    def test_worker_controls_require_all_original_clients(self):
+        rows=[]
+        for rank in range(4):
+            rows.append('NDS_TRACE '+json.dumps({'op':'store_ready','segment_name':f'SOURCE:{12000+rank}',
+                        'contributes':True,'pool_bytes':1024,'worker_pid':rank+100,
+                        'control_path':f'/evidence/disk/worker-clear-{rank+100}-{12000+rank}.sock'}))
+        self.assertEqual(len(module.contributing_controls('\n'.join(rows),'SOURCE')),4)
+        with self.assertRaises(AssertionError):module.contributing_controls('\n'.join(rows[:3]),'SOURCE')
+
     def test_control_hostname_not_transport_endpoint(self):
         # W1 SDK reported these distinct control/data ports.
         self.assertEqual(module.contributing_segments(line('SOURCE:12550'),'SOURCE',1),['SOURCE:12550'])

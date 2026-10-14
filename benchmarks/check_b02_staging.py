@@ -16,7 +16,7 @@ for name, expected in manifest['files'].items():
 files = sorted((ROOT/'kv_tier').glob('*.py'))
 lines = [p.name+':'+hashlib.sha256(p.read_bytes()).hexdigest() for p in files]
 kit = hashlib.sha256('\n'.join(lines).encode()).hexdigest()
-assert kit == '56cedb68c9ba73d95613238215f0aa41a9c45bb9273098ec6d6fa94e0ce8076b'
+assert kit == manifest.get('toolkit_sha256','56cedb68c9ba73d95613238215f0aa41a9c45bb9273098ec6d6fa94e0ce8076b')
 probe = hashlib.sha256((ROOT/'sdk_tier_probe.py').read_bytes()).hexdigest()
 assert probe == 'e5367b7dcbe5f3105fef6e14b085f420c48988e71a873283627b02436e95009b'
 for p in files+[ROOT/'sdk_tier_probe.py']: ast.parse(p.read_text())

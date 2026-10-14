@@ -127,6 +127,7 @@ class Node:
                'VLLM_LOGGING_LEVEL':'DEBUG','VLLM_SERVER_DEV_MODE':'1',
                'NDS_LOCAL_HOST':self.local,'NDS_MASTER':self.source+':50296','NDS_AGENT_PORT':'18197',
                'NDS_OWN_FILE_COLD':os.environ.get('NDS_OWN_FILE_COLD','1'),
+               'NDS_WORKER_CLEAR':'1' if mode=='disk' and self.role=='source' else '0',
                'MOONCAKE_OFFLOAD_LOCAL_BUFFER_SIZE_BYTES':str(1024**3),
                'MOONCAKE_OFFLOAD_TOTAL_SIZE_LIMIT_BYTES':str(64*1024**3),
                'MOONCAKE_OFFLOAD_BUCKET_MAX_TOTAL_SIZE':str(64*1024**3),

@@ -1,5 +1,13 @@
 # 工作审视报告
 
+## 2026-10-14 B02实际续跑更新
+
+三台0–3卡精确计算/HCCL通过；C4的四worker、各8×10MiB/160buffer，本机/跨机三轮192个key正确读回且全体正常退出。全量318个key完成读回正确；C1环境脚本前置失败、C2原client权限失败、C3 cleanup超时及远端首读267.423ms完整保留。模型T3/T4仍0，模型预约前候选第二机再次占用，C5/C6未提交。
+
+关键方法缺口是把正确控制hostname误认为足够权限：Master实际还检查原publisher client ID。新增原worker Unix控制通道，仅清成功put的own key；native实测通过，模型集成21CPU测试/实际backend override语法通过，三台最新20文件及9df66e4d...模型kit SHA通过。新增模型SSD预热仅代码验证；旧full模型HIXL/AICPU问题未闭环。C3数据正确仍因一worker超时保留exit−15/整轮exit1，C4统一120秒等待及控制通道组合通过不能证明SDK偶发关闭故障已普遍修复。
+
+本轮5个中台task均terminal/archiveReady，累计138；所有自有容器、端口/offload、预约已清。当前唯一主阻塞为覆盖模型启动/三轮请求的双物理B02四卡窗口；blocked，自己的资源规则继续至原截止，不给五档/长上下文/压力/direct通过结论。完整数据及复现见 `b02/NATIVE-LAYOUT.md`，以下迁移/旧阶段审视保留历史。
+
 ## 2026-10-14 B02迁移更新
 
 三台B02同SHA镜像、原完整配置/tokenizer和最新kit/probe已迁移，19文件SHA与CPU离线读取三台通过。新增6个中台task全部终态/archiveReady，含1个修正后通过的CPU前置失败，累计133。传输断连、低速中转、串行服务/并发客户端不匹配和错误partial存在性假设均保留；CPU检查明确关闭设备backend自动加载，不把它当NPU初始化通过。

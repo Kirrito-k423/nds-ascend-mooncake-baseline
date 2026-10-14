@@ -14,7 +14,7 @@ import traceback
 
 from node import Node, http, serve
 from stream import request
-from segments import contributing_segments
+from segments import contributing_segments,contributing_controls
 
 ROLE = sys.argv[1]
 NODE = Node(ROLE)
@@ -47,7 +47,8 @@ def agent(path, body): return call('source','/agent',{'path':path,'body':body})
 def disk_only(keys):
     text=call('source','/log',{'offset':0})['text']
     names=contributing_segments(text,NODE.source)
-    return agent('/disk-only',{'keys':keys,'segments':names})
+    controls=contributing_controls(text,NODE.source)
+    return agent('/disk-only',{'keys':keys,'segments':names,'worker_controls':controls})
 
 
 def traces(text):
@@ -69,7 +70,7 @@ def dataset(length, count, seed):
     return rows
 
 
-def batch(role, tokens, label, tier=None, round_number=None, before_replicas=None):
+def batch(role, tokens, label, tier=None, round_number=None, before_replicas=None,warmup_tier=None):
     reset(role)
     before = {r:call(r,'/snapshot') for r in ['source','destination']}
     offset = call(role,'/offset')['offset']
@@ -99,6 +100,7 @@ def batch(role, tokens, label, tier=None, round_number=None, before_replicas=Non
     (OUT/(label+'.requests.json')).write_text(json.dumps(results,indent=2))
     (OUT/(label+'.sampling.json')).write_text(json.dumps(observations))
     evidence = {'label':label,'role':role,'tier':tier,'round':round_number,
+                'warmup_tier':warmup_tier,
                 'input_tokens':len(tokens[0]),'concurrency':len(tokens),'requests':len(results),
                 'successful':sum(x['success'] for x in results),'batch_s':elapsed,
                 'before':before,'after':after,'before_replicas':before_replicas,
@@ -111,13 +113,14 @@ def batch(role, tokens, label, tier=None, round_number=None, before_replicas=Non
     save()
     assert evidence['successful'] == len(results), 'Request failure: '+label
     assert evidence['token_timing_exact'], 'SSE token grouping prevents exact interval measurement: '+label
-    if tier == 'T0': assert not evidence['loads'], 'Unexpected external hit: '+label
-    elif tier:
+    validated_tier=tier or warmup_tier
+    if validated_tier == 'T0': assert not evidence['loads'], 'Unexpected external hit: '+label
+    elif validated_tier:
         assert len(evidence['loads']) == len(results), 'Missing load spec: '+label
         assert all(int(local)==0 and int(ext)==len(tokens[0])-1 for _,local,ext in evidence['loads']), 'Partial/local hit: '+label
         ends = [x for x in evidence['traces'] if x['op']=='get_end']
         assert ends and all(all(n>0 for n in x['returns']) for x in ends), 'Native load failed'
-        if tier in ['T3','T4']:
+        if validated_tier in ['T3','T4']:
             assert sum(x['offload_rpc_after']-x['offload_rpc_before'] for x in ends)>0, 'No offload RPC reads'
             delivered = sum(sum(x['returns']) for x in ends)
             disk_read = sum(after['source']['disk'][d]['read_bytes']-before['source']['disk'][d]['read_bytes']
@@ -207,9 +210,14 @@ def owner():
                     common=dataset(1024,c,seed)
                     label=f'{mode}-warm-C{c}-W{warm_round}'
                     batch('destination',dataset(1024,c,seed+8000000),label+'-cold-dest')
-                    batch('source',common,label+'-cold-source')
-                    batch('source',common,label+'-local-load')
-                    batch('destination',common,label+'-remote-load')
+                    warm_cold=batch('source',common,label+'-cold-source')
+                    warm_keys=warm_cold['keys']
+                    for role,warm_tier in [('source','T3'),('destination','T4')]:
+                        proof=None
+                        if mode=='disk':
+                            wait_disk(warm_keys);proof=disk_only(warm_keys)['after']
+                        batch(role,common,label+('-local-load' if role=='source' else '-remote-load'),
+                              before_replicas=proof,warmup_tier=warm_tier if mode=='disk' else None)
             for length,c in configurations:
                 if cap is None and c != 1:
                     REPORT['skipped'].append({'mode':mode,'input':length,'concurrency':c,'reason':'KV capacity not parsed'})

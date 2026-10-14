@@ -2,6 +2,8 @@
 
 本包面向已有授权的两台物理 A5，完整 Qwen2.5-72B-Instruct、dummy BF16、TP4、PD-colocated。保留基线 1b05f19 的原生 SDK 导入顺序修正。实验分为1024/C1校准与容量约束下的长度/并发扫描，前一轮证据通过后才扩大规模。
 
+2026-10-14 最新：B02三台20文件SHA通过，模型kit为 `9df66e4d0264230650a07eafc1f6c9d153fa347bd3446287aa591a061b9092e5`。B02-1/2四worker各8×10MiB/160buffers本机与跨机SSD-only读回三轮通过；SDK要求原publisher client清除自身key，不能由scheduler仅凭控制hostname代清。新增 `worker_control.py` 的原client Unix socket，0600且位于task-owned `/evidence/disk`，已在native实际验证。完整模型override、SSD worker预热仍未NPU验证，T3/T4模型0。新预热逐次构造SSD-only，`warmup_tier`与正式`tier`分开。见 `reports/mac16/b02/NATIVE-LAYOUT.md`；此前迁移与W1段落保留历史语境。
+
 source是持有KV副本的源机器；destination是另一台物理机器。T1在source处理请求并读本机DRAM，T2在destination处理请求并从source读远端DRAM；T3/T4同样区分本机/远端SSD。两端各有T0冷请求基线，source/destination不是同一请求的两个阶段。
 
 2026-10-14 已完成 B02-1/2/3 迁移：三台同一镜像SHA、最新kit/probe及完整原配置/tokenizer，19文件SHA和CPU离线配置/tokenizer往返均通过。未复制真实权重，三台工作目录为 `/home/t00906153/nds-mac16-b02-20261014`；source默认B02-1、destination B02-2，B02-3备用。临时服务、压缩镜像及残片已清。详见 `reports/mac16/b02/MIGRATION.md`。本轮未做新NPU实验；中台已升级forwarded-resource-identity-v1，原proxy去重限制已修复。用户安排内网AI接续，内网交接见PR#5的 `docs/MAC16-INTRANET-HANDOFF.md`；资源候选/CPU校验不代替预约、计算/HCCL、native和模型门禁。
@@ -75,4 +77,4 @@ source各rank独立offload目录，64GiB显式配额、1GiBstaging buffer、256M
 
 见`reports/mac16/w1/NATIVE-SSD.md`及data。单卡MEMORY/SSD的1/3/10MiB各三轮正确；SSD读前COMPLETE LOCAL_DISK-only、lease6s，冷文件三轮每次实际盘读payload+4096B。OS缓存保留的1MiB读回虽正确、RPC+1，但盘读0，不计为物理SSD性能。64MiB失败保留；上游参考源码不能当部署库实际大小上限，10MiB通过已推翻4MiB推断。
 
-下一步只在有相同模型资产及可同时预约的双节点窗口时，先验证10MiB×8key、四worker和跨机native加载，再做1024/C1模型SSD三轮。当前所有proxy SSH端口共用预约入口，第二预约409时不能用短执行/旁路SSH替代预约跑模型。Node.start及worker预热、hostname映射/fadvise组合修改尚未四worker设备实测。重新计算并部署最新全部*.py指纹，旧65d89b6不可重用。W1累计121task和20短诊断已终态，自有容器/端口/offload及预约已清。
+下一步只在有相同模型资产及可同时预约的双节点窗口时，先验证10MiB×8key、四worker和跨机native加载，再做1024/C1模型SSD三轮。W1当时proxy去重限制随后已修复；仍不得绕过预约跑模型。Node.start及worker预热、hostname映射/fadvise组合修改尚未四worker设备实测。重新计算并部署最新全部*.py指纹，旧65d89b6不可重用。W1累计121task和20短诊断已终态，自有容器/端口/offload及预约已清。

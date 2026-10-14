@@ -8,6 +8,7 @@ import threading
 import time
 import traceback
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from worker_control import request_clear
 
 import numpy as np
 import torch
@@ -22,12 +23,14 @@ STORE = MooncakeDistributedStore()
 assert STORE.setup(os.environ['NDS_LOCAL_HOST'], 'P2PHANDSHAKE', 0, 32*1024**2,
                    'ascend', '', os.environ['NDS_MASTER']) == 0
 OUT = Path('/evidence')
+PROBE_KEYS=set()
 
 
 def serial(obj, depth=0):
     if obj is None or isinstance(obj, (str, int, float, bool)): return obj
     if isinstance(obj, (list, tuple)): return [serial(x, depth+1) for x in obj]
     if isinstance(obj, dict): return {str(k): serial(v, depth+1) for k, v in obj.items()}
+    if hasattr(obj,'name') and hasattr(obj,'value'):return str(obj)
     if depth > 8: return str(obj)
     result = {}
     for name in dir(obj):
@@ -70,7 +73,7 @@ def complete(status):
     return status.rsplit('.',1)[-1] == 'COMPLETE'
 
 
-def disk_only(keys,known_segments=None):
+def disk_only(keys,known_segments=None,worker_controls=None):
     before = audit(keys)
     assert keys and all(rows and any(r['local_disk'] and complete(r['status']) for r in rows)
                         for rows in before.values()), 'Missing COMPLETE LOCAL_DISK'
@@ -84,8 +87,18 @@ def disk_only(keys,known_segments=None):
         assert segments, 'Memory descriptor has no segment_name; refuse unknown clearing'
     # No replica query may occur between this wait and clearing.
     time.sleep(6)
-    cleared = {s: STORE.batch_replica_clear(keys, s) for s in sorted(segments)}
+    cleared=[];covered=set()
+    if worker_controls is not None:
+        assert set(worker_controls)==set(known_segments),'Worker/client map mismatch'
+        for path in worker_controls.values():
+            result=request_clear(path,keys,sorted(segments));cleared.append(result);covered.update(result['owned_keys'])
+    own_probe=sorted(set(keys)&PROBE_KEYS)
+    if own_probe:
+        cleared.append({'agent_owned_keys':own_probe,'clear_results':{s:STORE.batch_replica_clear(own_probe,s) for s in sorted(segments)}})
+        covered.update(own_probe)
+    assert covered==set(keys),'Refuse keys without their original publisher client'
     after = audit(keys)
+    (OUT/'last-disk-clear.json').write_text(json.dumps({'before':before,'clear_results':cleared,'after':after},indent=2))
     assert all(rows and all(not r['memory'] and r['local_disk'] and complete(r['status']) for r in rows)
                for rows in after.values()), 'A COMPLETE LOCAL_DISK-only replica is required'
     evicted=[]
@@ -128,6 +141,7 @@ def probe_put(size):
     try: rc = STORE.put_from(key, data.data_ptr(), size)
     finally: assert STORE.unregister_buffer(data.data_ptr()) == 0
     assert rc == 0, rc
+    PROBE_KEYS.add(key)
     return {'key': key, 'size': size, 'sha256': hashlib.sha256(host.numpy().tobytes()).hexdigest()}
 
 
@@ -155,7 +169,7 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
             path = self.path
             if path == '/audit': result = audit(body['keys'])
-            elif path == '/disk-only': result = disk_only(body['keys'],body.get('segments'))
+            elif path == '/disk-only': result = disk_only(body['keys'],body.get('segments'),body.get('worker_controls'))
             elif path == '/remove-all':
                 # Isolated task-owned master only. Never use against a shared pool.
                 time.sleep(6)
