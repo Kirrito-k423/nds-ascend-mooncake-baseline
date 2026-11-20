@@ -1,0 +1,142 @@
+[
+  {
+    "archive": "native-boundary-b021-w1-model10mfix.tar.gz",
+    "member": "results/native-disk.json",
+    "mode": "disk",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 3,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-boundary-b021-w1-model10mfix.tar.gz",
+    "member": "results/native-memory.json",
+    "mode": "memory",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 3,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-cold.tar.gz",
+    "member": "results/native-disk.json",
+    "mode": "disk",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 6,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-cold.tar.gz",
+    "member": "results/native-memory.json",
+    "mode": "memory",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 6,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-endpoint.tar.gz",
+    "member": "results/native-disk.json",
+    "mode": "disk",
+    "setup_return": 0,
+    "functional_pass": false,
+    "completed_records": 0,
+    "error": "Traceback (most recent call last):\n  File \"/task/sdk_tier_probe.py\", line 120, in <module>\n    proof=only_disk(key) if mode=='disk' else {'after':audit(key)}\n          ^^^^^^^^^^^^^^\n  File \"/task/sdk_tier_probe.py\", line 87, in only_disk\n    assert after and all(r['local_disk'] and not r['memory'] and complete(r) for r in after)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-endpoint.tar.gz",
+    "member": "results/native-memory.json",
+    "mode": "memory",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 6,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-hostname.tar.gz",
+    "member": "results/native-disk.json",
+    "mode": "disk",
+    "setup_return": 0,
+    "functional_pass": false,
+    "completed_records": 3,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-hostname.tar.gz",
+    "member": "results/native-memory.json",
+    "mode": "memory",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 6,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-k1.tar.gz",
+    "member": "results/native-disk.json",
+    "mode": "disk",
+    "setup_return": 0,
+    "functional_pass": false,
+    "completed_records": 0,
+    "error": "Traceback (most recent call last):\n  File \"/task/sdk_tier_probe.py\", line 111, in <module>\n    proof=only_disk(key) if mode=='disk' else {'after':audit(key)}\n          ^^^^^^^^^^^^^^\n  File \"/task/sdk_tier_probe.py\", line 66, in only_disk\n    before=audit(key)\n           ^^^^^^^^^^\n  File \"/task/sdk_tier_probe.py\", line 47, in audit\n    if r['local_disk']:r['disk_descriptor']=serial(d.get_local_disk_descriptor())\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'mooncake.store.ReplicaDescriptor' object has no attribute 'get_local_disk_descriptor'. Did you mean: 'get_disk_descriptor'?\n",
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-k1.tar.gz",
+    "member": "results/native-memory.json",
+    "mode": "memory",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 6,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-k1-apifix.tar.gz",
+    "member": "results/native-disk.json",
+    "mode": "disk",
+    "setup_return": 0,
+    "functional_pass": false,
+    "completed_records": 0,
+    "error": "Traceback (most recent call last):\n  File \"/task/sdk_tier_probe.py\", line 117, in <module>\n    proof=only_disk(key) if mode=='disk' else {'after':audit(key)}\n          ^^^^^^^^^^^^^^\n  File \"/task/sdk_tier_probe.py\", line 80, in only_disk\n    assert names or not any(r['memory'] for r in before)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-k1-apifix.tar.gz",
+    "member": "results/native-memory.json",
+    "mode": "memory",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 6,
+    "error": null,
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-k32.tar.gz",
+    "member": "results/native-disk.json",
+    "mode": "disk",
+    "setup_return": 0,
+    "functional_pass": false,
+    "completed_records": 0,
+    "error": "Traceback (most recent call last):\n  File \"/task/sdk_tier_probe.py\", line 108, in <module>\n    proof=only_disk(key) if mode=='disk' else {'after':audit(key)}\n          ^^^^^^^^^^^^^^\n  File \"/task/sdk_tier_probe.py\", line 69, in only_disk\n    else:raise TimeoutError('No COMPLETE LOCAL_DISK in 120s')\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: No COMPLETE LOCAL_DISK in 120s\n",
+    "disk_wait_timeout": null
+  },
+  {
+    "archive": "native-readback-b021-w1-k32.tar.gz",
+    "member": "results/native-memory.json",
+    "mode": "memory",
+    "setup_return": 0,
+    "functional_pass": true,
+    "completed_records": 6,
+    "error": null,
+    "disk_wait_timeout": null
+  }
+]

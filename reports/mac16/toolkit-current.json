@@ -1,0 +1,16 @@
+{
+  "revision": "post-r4 guards",
+  "sha256": "65d89b65f083169ac06f48964111ec2c64a8bf394b50d14026bc7286ae439983",
+  "files": {
+    "analyze.py": "047d966b48570040b3d6dc57ab41d80b6560bfb3f46609862a35f8e290aa51a7",
+    "idle_gate.py": "434ea87044a5201c756754dbe69460e3a753b124f29730f8dba43bd068d93bb3",
+    "instrument.py": "583a9cbfc33c10b9a9712496712a044db90a3b9628f7a59c59838561faa8a52b",
+    "node.py": "900be04666e9a842402f4198fe69241080d644b105fe09fd5496a1892360c944",
+    "run.py": "52913e828c70e349b5b2170b923b88d1a459f0ce28ab7cd9dc67096c8c9b3c16",
+    "store_agent.py": "2e7e70a7f5755d5b35bc03e3d738da4fed5d06b94a390e58f26cfc7082e365ba",
+    "stream.py": "944f415ba8971f3778cb27e672f004dea865ad76a4edb604acbd51c7bfaaa889",
+    "wait_master.py": "1f9deeadd27cb62cc9d26073bbaa5f8f237c14dc3927fd0236722ed9390a022e"
+  },
+  "npu_validated": false,
+  "note": "Actual-start idle gate and fatal-TE detection added after r4; latest worker warm-up still not executed on NPU."
+}

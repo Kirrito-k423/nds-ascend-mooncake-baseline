@@ -24,7 +24,7 @@ for _ in range(20):
     dist.all_reduce(x)
 torch.npu.synchronize()
 pathlib.Path(f'/evidence/tp4-rank{rank}.json').write_text(json.dumps({
-    'rank':rank, 'world_size':dist.get_world_size(), 'all_reduce_correct':True,
+    'pid':os.getpid(), 'completed_wall_ns':time.time_ns(), 'rank':rank, 'world_size':dist.get_world_size(), 'all_reduce_correct':True,
     'integer_matmul_exact':True,
     'mean_ms':(time.perf_counter()-start)*1000/20,
     'device_name':torch.npu.get_device_name(rank)}, indent=2))

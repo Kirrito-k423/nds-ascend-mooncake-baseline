@@ -1,0 +1,7 @@
+{
+  "reason": "Source engine failed HIXL/AICPU initialization before health; foreign all-eight-card python processes appeared after idle gate; abort only owned source container.",
+  "error": "AdxlEngine status 507018; HixlSyncTransferContext retCode 0x2a; TransferEngine ret -1",
+  "causality": "unproven; no SSD requests or data readback completed",
+  "stop_task_submit_rejected": "409 no ready idle machine because own task running; short execution used for exact owned container cleanup",
+  "stopped_foreign_processes": false
+}

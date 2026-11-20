@@ -1,0 +1,48 @@
+{
+  "goal_complete": false,
+  "input_tokens": 1024,
+  "output_tokens": 32,
+  "concurrency": 1,
+  "rounds": 3,
+  "native_dram_reads_verified": 12,
+  "model_requests": 17,
+  "formal_requests": 12,
+  "model_successful": 17,
+  "tiers": {
+    "T0": {
+      "status": "validated_calibration",
+      "formal_requests": 6
+    },
+    "T1": {
+      "status": "validated_calibration",
+      "formal_requests": 3
+    },
+    "T2": {
+      "status": "validated_calibration",
+      "formal_requests": 3
+    },
+    "T3": {
+      "status": "not_executed",
+      "formal_requests": 0
+    },
+    "T4": {
+      "status": "not_executed",
+      "formal_requests": 0
+    }
+  },
+  "direct_path_status": "no validated callable path",
+  "host_dram_bytes": null,
+  "network_link_bytes": null,
+  "long_context_scan_status": "not_executed",
+  "primary_blocker": "two physical A5 nodes with matching model assets, simultaneous reservations and sustained four-card availability",
+  "native_ssd_physical_reads_verified_w1": 9,
+  "native_ssd_sizes_verified_w1": [
+    1048576,
+    3145728,
+    10485760
+  ],
+  "native_exploratory_completed_reads_w1": 51,
+  "native_ssd_64MiB_status": "AllocateBatch assertion; no completed SSD sample",
+  "native_model_object_10MiB_status": "single-object three rounds passed; multi-key/multi-worker/cross-node unvalidated",
+  "cpu_tests_passed": 15
+}

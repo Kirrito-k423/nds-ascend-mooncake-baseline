@@ -1,0 +1,137 @@
+{
+  "mode": "memory",
+  "sizes": [
+    10485760
+  ],
+  "rounds": 3,
+  "records": [
+    {
+      "size_bytes": 10485760,
+      "round": 0,
+      "replicas": {
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": true,
+            "local_disk": false,
+            "memory_descriptor": {
+              "buffer_descriptor": {
+                "buffer_address": 17592269930496,
+                "size": 10485760,
+                "transport_endpoint": "SOURCE:15434"
+              }
+            }
+          }
+        ]
+      },
+      "returned_bytes": 10485760,
+      "elapsed_ms": 0.39549,
+      "sha256": "450bff94e7c015446bde683912b68f2edb444346229e4b5493adfa985d695542",
+      "expected_sha256": "450bff94e7c015446bde683912b68f2edb444346229e4b5493adfa985d695542",
+      "exact": true,
+      "offload_rpc_delta": 0,
+      "disk_before": {
+        "nvme0n1": 54577433600,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54577433600,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 0,
+      "physical_disk_read_witness": false
+    },
+    {
+      "size_bytes": 10485760,
+      "round": 1,
+      "replicas": {
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": true,
+            "local_disk": false,
+            "memory_descriptor": {
+              "buffer_descriptor": {
+                "buffer_address": 17592269930496,
+                "size": 10485760,
+                "transport_endpoint": "SOURCE:15434"
+              }
+            }
+          }
+        ]
+      },
+      "returned_bytes": 10485760,
+      "elapsed_ms": 0.34226,
+      "sha256": "450bff94e7c015446bde683912b68f2edb444346229e4b5493adfa985d695542",
+      "expected_sha256": "450bff94e7c015446bde683912b68f2edb444346229e4b5493adfa985d695542",
+      "exact": true,
+      "offload_rpc_delta": 0,
+      "disk_before": {
+        "nvme0n1": 54577433600,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54577433600,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 0,
+      "physical_disk_read_witness": false
+    },
+    {
+      "size_bytes": 10485760,
+      "round": 2,
+      "replicas": {
+        "after": [
+          {
+            "status": "ReplicaStatus.COMPLETE",
+            "memory": true,
+            "local_disk": false,
+            "memory_descriptor": {
+              "buffer_descriptor": {
+                "buffer_address": 17592269930496,
+                "size": 10485760,
+                "transport_endpoint": "SOURCE:15434"
+              }
+            }
+          }
+        ]
+      },
+      "returned_bytes": 10485760,
+      "elapsed_ms": 0.32418,
+      "sha256": "450bff94e7c015446bde683912b68f2edb444346229e4b5493adfa985d695542",
+      "expected_sha256": "450bff94e7c015446bde683912b68f2edb444346229e4b5493adfa985d695542",
+      "exact": true,
+      "offload_rpc_delta": 0,
+      "disk_before": {
+        "nvme0n1": 54577433600,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_after": {
+        "nvme0n1": 54577433600,
+        "nvme3n1": 3072000,
+        "nvme2n1": 3072000,
+        "nvme1n1": 3072000
+      },
+      "disk_read_bytes": 0,
+      "physical_disk_read_witness": false
+    }
+  ],
+  "reference": "numpy PCG64 seed 42+size, uint8 positional random values",
+  "model_requests": 0,
+  "direct_dma_tested": false,
+  "start_wall_ns": 1791899221344252800,
+  "setup_return": 0,
+  "remove_all_return": 0,
+  "functional_pass": true,
+  "finish_wall_ns": 1791899234680791060
+}

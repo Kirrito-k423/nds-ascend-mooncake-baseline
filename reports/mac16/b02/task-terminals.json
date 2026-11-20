@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mac16-b02-image-export-20261014-x2",
+    "selectedMachineId": "a5-b02-1",
+    "status": "succeeded",
+    "exitCode": 0,
+    "finishedAt": "2026-10-14T10:58:43.01154+08:00",
+    "archiveReady": true
+  },
+  {
+    "id": "mac16-b02-image-server-20261014-x3",
+    "selectedMachineId": "a5-b02-1",
+    "status": "succeeded",
+    "exitCode": 0,
+    "finishedAt": "2026-10-14T11:12:38.451988+08:00",
+    "archiveReady": true
+  },
+  {
+    "id": "mac16-b02-stage-a5-b02-1-20261014-x2",
+    "selectedMachineId": "a5-b02-1",
+    "status": "failed",
+    "exitCode": 1,
+    "finishedAt": "2026-10-14T11:13:07.21702+08:00",
+    "archiveReady": true
+  },
+  {
+    "id": "mac16-b02-stage-a5-b02-1-20261014-x3",
+    "selectedMachineId": "a5-b02-1",
+    "status": "succeeded",
+    "exitCode": 0,
+    "finishedAt": "2026-10-14T11:14:35.51606+08:00",
+    "archiveReady": true
+  },
+  {
+    "id": "mac16-b02-stage-a5-b02-2-20261014-x2",
+    "selectedMachineId": "a5-b02-2",
+    "status": "succeeded",
+    "exitCode": 0,
+    "finishedAt": "2026-10-14T11:18:23.310617+08:00",
+    "archiveReady": true
+  },
+  {
+    "id": "mac16-b02-stage-a5-b02-3-20261014-x2",
+    "selectedMachineId": "a5-b02-3",
+    "status": "succeeded",
+    "exitCode": 0,
+    "finishedAt": "2026-10-14T11:22:10.782996+08:00",
+    "archiveReady": true
+  }
+]
