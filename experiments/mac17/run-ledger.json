@@ -1,0 +1,142 @@
+[
+  {
+    "task_id": "mac17-1m-audit-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "1m-audit-b021",
+    "collected": true,
+    "container_exit_code": 0,
+    "engine_started": true,
+    "request_count": 1,
+    "request_pass_count": 1,
+    "exception": null
+  },
+  {
+    "task_id": "mac17-1m-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "1m-b021",
+    "collected": true,
+    "container_exit_code": 0,
+    "engine_started": true,
+    "request_count": 1,
+    "request_pass_count": 1,
+    "exception": null
+  },
+  {
+    "task_id": "mac17-dp8-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "dp8-b021",
+    "collected": true,
+    "container_exit_code": 0,
+    "engine_started": true,
+    "request_count": 4,
+    "request_pass_count": 4,
+    "exception": null
+  },
+  {
+    "task_id": "mac17-full-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "full-b021",
+    "collected": true,
+    "container_exit_code": 1,
+    "engine_started": false,
+    "request_count": 0,
+    "request_pass_count": 0,
+    "exception": "Engine core initialization failed. See root cause above. Failed core proc(s): {}"
+  },
+  {
+    "task_id": "mac17-full-guard-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "full-guard-b021",
+    "collected": true,
+    "container_exit_code": 1,
+    "engine_started": true,
+    "request_count": 0,
+    "request_pass_count": 0,
+    "exception": "EngineCore encountered an issue. See stack trace (above) for the root cause."
+  },
+  {
+    "task_id": "mac17-inventory-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "inventory-b021",
+    "collected": true,
+    "container_exit_code": null
+  },
+  {
+    "task_id": "mac17-inventory-b078-20261013",
+    "machine_label": "B07-8",
+    "case": "inventory-b078",
+    "collected": true,
+    "container_exit_code": null
+  },
+  {
+    "task_id": "mac17-metadata64-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "metadata64-b021",
+    "collected": true,
+    "container_exit_code": 1
+  },
+  {
+    "task_id": "mac17-metadata64-c-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "metadata64-c-b021",
+    "collected": true,
+    "container_exit_code": 0
+  },
+  {
+    "task_id": "mac17-pool-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "pool-b021",
+    "collected": true,
+    "container_exit_code": 0,
+    "engine_started": true,
+    "request_count": 16,
+    "request_pass_count": 16,
+    "exception": null
+  },
+  {
+    "task_id": "mac17-pool32-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "pool32-b021",
+    "collected": true,
+    "container_exit_code": 137
+  },
+  {
+    "task_id": "mac17-pool32b-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "pool32b-b021",
+    "collected": true,
+    "container_exit_code": 0,
+    "engine_started": true,
+    "request_count": 16,
+    "request_pass_count": 16,
+    "exception": null
+  },
+  {
+    "task_id": "mac17-preflight-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "preflight-b021",
+    "collected": true,
+    "container_exit_code": 1
+  },
+  {
+    "task_id": "mac17-quant-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "quant-b021",
+    "collected": true,
+    "container_exit_code": 1
+  },
+  {
+    "task_id": "mac17-quant-nd-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "quant-nd-b021",
+    "collected": true,
+    "container_exit_code": 0
+  },
+  {
+    "task_id": "mac17-version-b021-20261013",
+    "machine_label": "B02-1",
+    "case": "version-b021",
+    "collected": true,
+    "container_exit_code": 1
+  }
+]

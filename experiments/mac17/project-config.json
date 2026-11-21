@@ -1,0 +1,88 @@
+{
+  "project": "NDS / MAC-17",
+  "repository": "Kirrito-k423/nds-ascend-mooncake-baseline",
+  "base_commit": "1b05f19b425889c7bc7d139f75f710d56126c932",
+  "branch": "mac-17-v4-flash-a5",
+  "hardware": {
+    "class": "Ascend950DT",
+    "tested_machine_label": "B02-1",
+    "physical_devices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "reservation_required": true,
+    "warning_allowed_after_smoke_pass": true
+  },
+  "runtime": {
+    "image_id": "sha256:64155cd1bb77edf3c927a23c83cdad49e9d5394bd4b90113bc02ce017897c270",
+    "python": "3.12.13",
+    "python_environment": "container /opt/nds-venv",
+    "torch": "2.10.0",
+    "torch_npu": "2.10.0.post4",
+    "vllm": "0.23.0+nds1.empty",
+    "vllm_ascend": "0.23.0+nds1",
+    "cann": "9.1.0",
+    "nnal_atb": "9.1.0",
+    "driver": "26.2.0.b020",
+    "mooncake_npu": "0.3.11.post1"
+  },
+  "model": {
+    "id": "deepseek-ai/DeepSeek-V4-Flash",
+    "revision": "60d8d70770c6776ff598c94bb586a859a38244f1",
+    "main_layers": 43,
+    "mtp_layers": 1,
+    "native_quantization": "mixed MXFP4 / MXFP8, UE8M0 scales",
+    "weights": "full runtime shape/dtype fake values; zero real tensor payload downloaded",
+    "cpu_offload_gb": 0
+  },
+  "parallel": {
+    "tp": 1,
+    "dp": 8,
+    "ep": 8
+  },
+  "request": {
+    "input_lengths": [
+      8192,
+      32768,
+      100000,
+      200000
+    ],
+    "conditional_input_length": 1000000,
+    "output_tokens": 32,
+    "max_num_seqs": 1,
+    "max_num_batched_tokens": 2048,
+    "block_size": 128,
+    "eager": true,
+    "prefix_caching": false,
+    "hybrid_manager": true
+  },
+  "network": {
+    "model_fetch_proxy": "CLI --proxy; loopback proxy is optional",
+    "runtime_offline": true,
+    "api_port": 18218,
+    "pool_master_port": 50217,
+    "pool_metrics_port": 50218,
+    "gloo_interface": "lo; single node only"
+  },
+  "checks": {
+    "hardware_reference": "integer matmul exactly equals CPU FP64; all_reduce exactly 28",
+    "pool_reference": "every restored SDK buffer SHA256 equals stored buffer after destination poison",
+    "business_accuracy": "not evaluated for fake weights",
+    "latency_baseline": "not established; collected single runs include first shape warmup",
+    "performance_threshold": null,
+    "proposed_latency_regression_warning_relative": 0.2,
+    "proposal_status": "pending project owner confirmation and controlled >=3 repeat baseline; not an acceptance gate"
+  },
+  "inspection": {
+    "frequency": "on demand and after environment/code changes",
+    "continuous_scheduler_configured": false
+  },
+  "results": "per-task SHW_RESULTS_DIR; sanitized archive + analysis.json",
+  "cleanup": "owned container/master/sampler and ports removed, reservation released; keep image/metadata cache explicitly recorded"
+}
